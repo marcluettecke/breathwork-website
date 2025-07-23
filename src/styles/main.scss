@@ -1,0 +1,321 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// Header Styles
+.header {
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-header;
+  transition: $transition-slow;
+  
+  &-inner {
+    padding: $header-padding-y $header-padding-x;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  &-logo {
+    height: $header-logo-height;
+    width: auto;
+  }
+  
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: $header-nav-gap;
+    
+    &-item {
+      font-size: $font-size-base;
+      font-weight: 400;
+      color: $white;
+      transition: opacity 0.2s ease;
+      text-transform: capitalize;
+      text-decoration: none;
+      
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  
+  &.scrolled {
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba($black, 0.1);
+    height: $header-height-scrolled;
+    
+    .header-nav-item {
+      color: $primary;
+    }
+    
+    .kontakt-button {
+      background-color: $primary;
+      color: $white;
+      
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+}
+
+.kontakt-button {
+  @include button($white, $black);
+  margin-left: 20px;
+  
+  &:hover {
+    background-color: rgba($white, 0.9);
+  }
+}
+
+// Hero Section
+.hero-section {
+  min-height: $hero-min-height;
+  padding-top: $hero-padding-top;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  &-content-wrapper {
+    padding: $hero-content-padding-y 0;
+    width: 100%;
+  }
+}
+
+.hero-content {
+  @include container;
+  
+  &-wrapper {
+    padding: $hero-content-padding-y 0;
+    width: 100%;
+  }
+}
+
+.hero-title {
+  @include responsive-text($font-size-hero, 32px);
+  line-height: $line-height-tight;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: $white;
+  margin-bottom: 40px;
+}
+
+.hero-text {
+  font-size: $font-size-lg;
+  line-height: 32.64px;
+  color: $white;
+  margin-bottom: $spacing-sm;
+  max-width: 650px;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+.hero-signature {
+  margin-top: 40px;
+}
+
+// Service Section
+.service {
+  &-section {
+    background-color: $secondary;
+    @include section-padding;
+  }
+  
+  &-container {
+    @include container;
+  }
+  
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xxl;
+    margin-bottom: $spacing-xxxl;
+    
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+  
+  &-card {
+    text-align: center;
+  }
+  
+  &-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto $spacing-lg;
+    display: block;
+  }
+  
+  &-title {
+    font-size: $font-size-xl;
+    color: $primary;
+    margin-bottom: $spacing-sm;
+    font-weight: 400;
+  }
+  
+  &-description {
+    font-size: 14.4px;
+    line-height: 21.6px;
+    color: $primary;
+    margin-bottom: $spacing-lg;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &-button {
+    @include button($primary);
+  }
+}
+
+// Section Title (shared)
+.section-title {
+  @include responsive-text($font-size-xxl, 28px);
+  line-height: $line-height-heading;
+  letter-spacing: -0.02em;
+  color: $primary;
+  text-align: center;
+  margin-bottom: $spacing-xxl;
+  font-weight: 400;
+  
+  &.text-white {
+    color: $white;
+  }
+}
+
+// Quote Section
+.quote {
+  &-section {
+    background-color: $primary;
+    @include section-padding(108px, 108px);
+    position: relative;
+  }
+  
+  &-content {
+    @include container;
+    text-align: center;
+    position: relative;
+    z-index: $z-index-overlay;
+  }
+  
+  &-text {
+    @include responsive-text($font-size-xxl, 28px);
+    line-height: $line-height-heading;
+    letter-spacing: -0.02em;
+    color: $white;
+    margin-bottom: $spacing-sm;
+    font-weight: 400;
+  }
+  
+  &-author {
+    font-size: $font-size-base;
+    color: $white;
+    font-weight: 300;
+  }
+}
+
+// About Section
+.about {
+  &-section {
+    background-color: $secondary;
+    @include section-padding($spacing-xxxxl, $spacing-xxxxl);
+  }
+  
+  &-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: $border-radius-circle;
+    @include aspect-ratio(1, 1);
+    object-fit: cover;
+  }
+  
+  &-text {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $primary;
+    margin-bottom: 20px;
+  }
+}
+
+// Testimonials Section
+.testimonials-section {
+  background-color: $primary;
+  @include section-padding;
+}
+
+.testimonial {
+  &-card {
+    background-color: $white;
+    border-radius: $border-radius-sm;
+    padding: $spacing-xl;
+    box-shadow: 0 4px 12px rgba($black, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  &-text {
+    font-size: $font-size-xl;
+    line-height: 36px;
+    color: $primary;
+    font-style: italic;
+    margin-bottom: $spacing-md;
+  }
+  
+  &-author {
+    font-size: $font-size-base;
+    color: $primary;
+    font-weight: 500;
+  }
+}
+
+// Contact Form Section
+.contact-section {
+  background-color: $secondary;
+  @include section-padding($spacing-xxxl, $spacing-xxxl);
+}
+
+.form-container {
+  @include container;
+  
+  .section-title {
+    margin-bottom: $spacing-xxl;
+  }
+}
+
+// Mobile Responsive Adjustments
+@media (max-width: $breakpoint-md) {
+  .header {
+    &-inner {
+      padding: 20px 20px;
+    }
+    
+    &-logo {
+      width: 200px;
+      height: auto;
+    }
+  }
+  
+  .hero {
+    &-content {
+      padding: 0 $container-padding-mobile;
+    }
+  }
+  
+  .service-container,
+  .quote-content {
+    padding: 0 $container-padding-mobile;
+  }
+}

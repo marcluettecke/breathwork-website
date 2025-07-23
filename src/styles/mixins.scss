@@ -1,0 +1,74 @@
+@import './variables.scss';
+
+// Container mixin
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $container-padding-mobile;
+  }
+}
+
+// Section padding mixin
+@mixin section-padding($top: $spacing-xxxl, $bottom: $spacing-xxxl) {
+  padding: $top 0 $bottom 0;
+}
+
+// Responsive typography
+@mixin responsive-text($desktop-size, $mobile-size) {
+  font-size: $desktop-size;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: $mobile-size;
+  }
+}
+
+// Button mixin
+@mixin button($bg-color: $primary, $text-color: $white) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 12px 24px;
+  border-radius: $border-radius-pill;
+  font-size: $font-size-sm;
+  font-weight: 400;
+  transition: $transition-base;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: translateY(-1px);
+  }
+}
+
+// Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width: 1, $height: 1) {
+  aspect-ratio: $width / $height;
+}
+
+// Overlay
+@mixin overlay($color: $black, $opacity: 0.2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color, $opacity);
+  z-index: 1;
+}
+
+// Text shadow for better readability on images
+@mixin text-shadow {
+  text-shadow: 0 2px 4px rgba($black, 0.3);
+}
