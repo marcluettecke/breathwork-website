@@ -1,0 +1,200 @@
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+
+// About Hero Section
+.about-hero {
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: $header-height;
+  
+  &-overlay {
+    @include overlay($black, 0.3);
+  }
+  
+  &-content {
+    @include container;
+    position: relative;
+    z-index: $z-index-overlay;
+    padding: $spacing-xxxl 0;
+  }
+  
+  &-title {
+    @include responsive-text(42px, 28px);
+    font-weight: 400;
+    line-height: $line-height-heading;
+    color: $white;
+    margin-bottom: $spacing-xl;
+    @include text-shadow;
+  }
+  
+  &-text {
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: $white;
+      margin-bottom: $spacing-md;
+      max-width: 800px;
+      @include text-shadow;
+      
+      @media (max-width: $breakpoint-md) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// About Content Section
+.about-content-section {
+  background-color: $secondary;
+  @include section-padding($spacing-xxxl, $spacing-xxxl);
+}
+
+.about-container {
+  @include container;
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xxl;
+  align-items: center;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+.about-image-column {
+  .about-portrait {
+    width: 100%;
+    max-width: 400px;
+    border-radius: $border-radius-circle;
+    @include aspect-ratio(1, 1);
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.about-text-column {
+  .about-section-title {
+    @include responsive-text($font-size-xxl, 28px);
+    color: $primary;
+    margin-bottom: $spacing-lg;
+    font-weight: 400;
+  }
+  
+  .about-text {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $primary;
+    margin-bottom: $spacing-md;
+    
+    &:first-of-type {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}
+
+// Qualifications Section
+.qualifications-section {
+  @include section-padding($spacing-xxxl, $spacing-xxxl);
+  background-color: $white;
+}
+
+.qualifications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xxl;
+  margin-top: $spacing-xl;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+.qualification-column {
+  .qualification-title {
+    font-size: $font-size-xl;
+    color: $primary;
+    margin-bottom: $spacing-md;
+    font-weight: 500;
+  }
+  
+  .qualification-list {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      font-size: $font-size-base;
+      color: $primary;
+      margin-bottom: $spacing-sm;
+      padding-left: $spacing-md;
+      position: relative;
+      
+      &:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: $primary;
+      }
+    }
+  }
+}
+
+// Philosophy Section
+.philosophy-section {
+  background-color: $secondary;
+  @include section-padding($spacing-xxxl, $spacing-xxxl);
+}
+
+.philosophy-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  .philosophy-quote {
+    font-size: $font-size-xl;
+    line-height: 1.6;
+    color: $primary;
+    font-style: italic;
+    margin: $spacing-xl 0;
+    padding: $spacing-lg;
+    border-left: 4px solid $primary;
+    text-align: left;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 18px;
+    }
+  }
+  
+  .philosophy-text {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $primary;
+    text-align: center;
+  }
+}
+
+// Section title (shared)
+.section-title {
+  @include responsive-text($font-size-xxl, 28px);
+  line-height: $line-height-heading;
+  color: $primary;
+  margin-bottom: $spacing-xl;
+  font-weight: 400;
+  
+  &.text-center {
+    text-align: center;
+  }
+}
+
+// Utility classes for text alignment
+.text-center {
+  text-align: center;
+}
