@@ -1,4 +1,6 @@
-@import './variables.scss';
+@use './variables' as *;
+@use 'sass:color';
+@use 'sass:math';
 
 // Container mixin
 @mixin container {
@@ -40,7 +42,7 @@
   cursor: pointer;
   
   &:hover {
-    background-color: darken($bg-color, 10%);
+    background-color: color.adjust($bg-color, $lightness: -10%);
     transform: translateY(-1px);
   }
 }
@@ -54,7 +56,7 @@
 
 // Aspect ratio
 @mixin aspect-ratio($width: 1, $height: 1) {
-  aspect-ratio: $width / $height;
+  aspect-ratio: math.div($width, $height);
 }
 
 // Overlay

@@ -1,5 +1,5 @@
-@import '../styles/variables.scss';
-@import '../styles/mixins.scss';
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
 
 .footer {
   background-color: #6B8296; // Exact color from original
@@ -8,8 +8,8 @@
   margin-top: 0;
   
   &-container {
-    @include container;
     max-width: 1200px;
+    @include container;
   }
   
   &-grid {

@@ -1,5 +1,5 @@
-@import '../styles/variables.scss';
-@import '../styles/mixins.scss';
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
 
 // About Hero Section
 .about-hero {
@@ -14,19 +14,19 @@
   }
   
   &-content {
-    @include container;
     position: relative;
     z-index: $z-index-overlay;
     padding: $spacing-xxxl 0;
+    @include container;
   }
   
   &-title {
-    @include responsive-text(42px, 28px);
     font-weight: 400;
     line-height: $line-height-heading;
     color: $white;
     margin-bottom: $spacing-xl;
     @include text-shadow;
+    @include responsive-text(42px, 28px);
   }
   
   &-text {
@@ -81,10 +81,10 @@
 
 .about-text-column {
   .about-section-title {
-    @include responsive-text($font-size-xxl, 28px);
     color: $primary;
     margin-bottom: $spacing-lg;
     font-weight: 400;
+    @include responsive-text($font-size-xxl, 28px);
   }
   
   .about-text {
@@ -183,11 +183,11 @@
 
 // Section title (shared)
 .section-title {
-  @include responsive-text($font-size-xxl, 28px);
   line-height: $line-height-heading;
   color: $primary;
   margin-bottom: $spacing-xl;
   font-weight: 400;
+  @include responsive-text($font-size-xxl, 28px);
   
   &.text-center {
     text-align: center;
