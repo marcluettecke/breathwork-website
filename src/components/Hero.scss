@@ -26,37 +26,41 @@
   &-content {
     @include container;
   }
-  
+
+  &-text-wrapper {
+    margin-bottom: 40px;
+  }
+
   &-title {
     @include responsive-text($font-size-hero, 32px);
     line-height: $line-height-tight;
     font-weight: 400;
     letter-spacing: -0.02em;
     color: $white;
-    margin-bottom: 40px;
+    margin: 0;
     @include text-shadow;
   }
-  
+
   &-text {
     font-size: $font-size-lg;
-    line-height: 32.64px;
+    line-height: 33.6px;
     color: $white;
     margin-bottom: $spacing-sm;
     max-width: 650px;
     @include text-shadow;
-    
+
     @media (max-width: $breakpoint-md) {
       font-size: 18px;
       line-height: 26px;
     }
   }
-  
+
   &-signature {
     margin-top: 40px;
-    
-    img {
-      height: 80px;
-      opacity: 0.9;
-    }
+  }
+
+  &-logo {
+    height: 80px;
+    opacity: 0.9;
   }
 }

@@ -1,5 +1,5 @@
-@use '../styles/variables' as *;
-@use '../styles/mixins' as *;
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
 
 .header {
   height: $header-height;
@@ -9,7 +9,7 @@
   right: 0;
   z-index: $z-index-header;
   transition: $transition-slow;
-  
+
   &-inner {
     padding: $header-padding-y $header-padding-x;
     display: flex;
@@ -20,17 +20,17 @@
     margin: 0 auto;
     position: relative;
   }
-  
+
   &-logo {
     height: $header-logo-height;
     width: auto;
   }
-  
+
   &-nav {
     display: flex;
     align-items: center;
     gap: $header-nav-gap;
-    
+
     &-item {
       font-size: $font-size-base;
       font-weight: 400;
@@ -38,28 +38,28 @@
       transition: opacity 0.2s ease;
       text-transform: capitalize;
       text-decoration: none;
-      
+
       &:hover {
         opacity: 0.7;
       }
     }
   }
-  
+
   &.scrolled {
-    background-color: $white;
+    background-color: #6B8296;
     box-shadow: 0 2px 4px rgba($black, 0.1);
     height: $header-height-scrolled;
-    
+
     .header-nav-item {
-      color: $primary;
-    }
-    
-    .kontakt-button {
-      background-color: $primary;
       color: $white;
-      
+    }
+
+    .kontakt-button {
+      background-color: $white;
+      color: #6B8296;
+
       &:hover {
-        background-color: $primary-dark;
+        background-color: rgba($white, 0.9);
       }
     }
   }
@@ -68,25 +68,16 @@
 .kontakt-button {
   @include button($white, $black);
   margin-left: 20px;
-  
+
   &:hover {
     background-color: rgba($white, 0.9);
   }
 }
 
-// Mobile Menu
-@media (max-width: $breakpoint-lg) {
+// Only hide navigation on very small screens (phones)
+@media (max-width: 640px) {
   .header {
     &-nav {
-      &.lg\\:flex {
-        display: none;
-      }
-    }
-  }
-  
-  // Mobile menu styles
-  nav.lg\\:hidden {
-    @media (min-width: $breakpoint-lg) {
       display: none;
     }
   }

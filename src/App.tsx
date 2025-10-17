@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-import Yoga from './pages/Yoga'
 import Atemtherapie from './pages/Atemtherapie'
 import About from './pages/About'
 import Termine from './pages/Termine'
@@ -15,10 +14,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: 'yoga',
-        element: <Yoga />,
       },
       {
         path: 'atemtherapie',

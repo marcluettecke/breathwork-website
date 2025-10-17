@@ -142,29 +142,21 @@ const ContactForm = () => {
           <p className="newsletter-text">
             Melde dich für meinen Newsletter an und erfahre viermal im Jahr von neuen Kursen, Aktionen und besonderen Angeboten.
           </p>
-          <div className="radio-group">
-            <label className="radio-label">
-              <input
-                type="radio"
-                name="newsletter"
-                value="yes"
-                checked={formData.newsletter === 'yes'}
-                onChange={handleChange}
-                required
-              />
-              <span>Anmelden</span>
-            </label>
-            <label className="radio-label">
-              <input
-                type="radio"
-                name="newsletter"
-                value="no"
-                checked={formData.newsletter === 'no'}
-                onChange={handleChange}
-                required
-              />
-              <span>Nein, Danke</span>
-            </label>
+          <div className="button-group">
+            <button
+              type="button"
+              className={`option-button ${formData.newsletter === 'yes' ? 'active' : ''}`}
+              onClick={() => setFormData(prev => ({ ...prev, newsletter: 'yes' }))}
+            >
+              Anmelden
+            </button>
+            <button
+              type="button"
+              className={`option-button ${formData.newsletter === 'no' ? 'active' : ''}`}
+              onClick={() => setFormData(prev => ({ ...prev, newsletter: 'no' }))}
+            >
+              Nein, Danke
+            </button>
           </div>
         </div>
         

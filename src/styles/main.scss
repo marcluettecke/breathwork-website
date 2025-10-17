@@ -1,79 +1,7 @@
-@use './variables' as *;
-@use './mixins' as *;
+@use "./variables" as *;
+@use "./mixins" as *;
 
-// Header Styles
-.header {
-  height: $header-height;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: $z-index-header;
-  transition: $transition-slow;
-  
-  &-inner {
-    padding: $header-padding-y $header-padding-x;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    max-width: $container-max-width;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  &-logo {
-    height: $header-logo-height;
-    width: auto;
-  }
-  
-  &-nav {
-    display: flex;
-    align-items: center;
-    gap: $header-nav-gap;
-    
-    &-item {
-      font-size: $font-size-base;
-      font-weight: 400;
-      color: $white;
-      transition: opacity 0.2s ease;
-      text-transform: capitalize;
-      text-decoration: none;
-      
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
-  
-  &.scrolled {
-    background-color: $white;
-    box-shadow: 0 2px 4px rgba($black, 0.1);
-    height: $header-height-scrolled;
-    
-    .header-nav-item {
-      color: $primary;
-    }
-    
-    .kontakt-button {
-      background-color: $primary;
-      color: $white;
-      
-      &:hover {
-        background-color: $primary-dark;
-      }
-    }
-  }
-}
-
-.kontakt-button {
-  @include button($white, $black);
-  margin-left: 20px;
-  
-  &:hover {
-    background-color: rgba($white, 0.9);
-  }
-}
+// Header styles are now in src/components/Header.scss
 
 // Hero Section
 .hero-section {
@@ -82,7 +10,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  
+
   &-content-wrapper {
     padding: $hero-content-padding-y 0;
     width: 100%;
@@ -91,7 +19,7 @@
 
 .hero-content {
   @include container;
-  
+
   &-wrapper {
     padding: $hero-content-padding-y 0;
     width: 100%;
@@ -104,24 +32,33 @@
   font-weight: 400;
   letter-spacing: -0.02em;
   color: $white;
-  margin-bottom: 40px;
+  margin: 0;
 }
 
 .hero-text {
   font-size: $font-size-lg;
-  line-height: 32.64px;
+  line-height: 33.6px;
   color: $white;
   margin-bottom: $spacing-sm;
   max-width: 650px;
-  
+
   @media (max-width: $breakpoint-md) {
     font-size: 18px;
     line-height: 26px;
   }
 }
 
+.hero-text-wrapper {
+  margin-bottom: 40px;
+}
+
 .hero-signature {
   margin-top: 40px;
+}
+
+.hero-logo {
+  height: 80px;
+  opacity: 0.9;
 }
 
 // Service Section
@@ -130,52 +67,64 @@
     background-color: $secondary;
     @include section-padding;
   }
-  
+
   &-container {
     @include container;
   }
-  
+
   &-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-xxl;
     margin-bottom: $spacing-xxxl;
-    
+
     @media (max-width: $breakpoint-md) {
       grid-template-columns: 1fr;
       gap: $spacing-xl;
     }
   }
-  
+
+  &-grid-single {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacing-xxxl;
+
+    .service-card {
+      max-width: 500px;
+      width: 100%;
+    }
+  }
+
   &-card {
     text-align: center;
   }
-  
+
   &-image {
     width: 100%;
     height: auto;
     max-width: 400px;
     margin: 0 auto $spacing-lg;
     display: block;
+    border-radius: 40px;
   }
-  
+
   &-title {
-    font-size: $font-size-xl;
+    font-size: 35.2px;
     color: $primary;
     margin-bottom: $spacing-sm;
     font-weight: 400;
   }
-  
+
   &-description {
-    font-size: 14.4px;
-    line-height: 21.6px;
+    font-size: 16px;
+    line-height: 24px;
     color: $primary;
     margin-bottom: $spacing-lg;
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   &-button {
     @include button($primary);
   }
@@ -190,7 +139,7 @@
   text-align: center;
   margin-bottom: $spacing-xxl;
   font-weight: 400;
-  
+
   &.text-white {
     color: $white;
   }
@@ -203,27 +152,62 @@
     @include section-padding(108px, 108px);
     position: relative;
   }
-  
+
   &-content {
     @include container;
-    text-align: center;
     position: relative;
     z-index: $z-index-overlay;
   }
-  
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  &-logo-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &-text-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
   &-text {
-    @include responsive-text($font-size-xxl, 28px);
-    line-height: $line-height-heading;
+    font-size: 35.2px;
+    line-height: 40.21px;
     letter-spacing: -0.02em;
     color: $white;
-    margin-bottom: $spacing-sm;
+    margin: 0 0 32px 0;
     font-weight: 400;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 28px;
+      line-height: 32px;
+    }
   }
-  
+
   &-author {
     font-size: $font-size-base;
     color: $white;
     font-weight: 300;
+    margin: 0;
+  }
+
+  &-logo {
+    height: 185px;
+    width: auto;
+    opacity: 1;
   }
 }
 
@@ -233,7 +217,7 @@
     background-color: $secondary;
     @include section-padding($spacing-xxxxl, $spacing-xxxxl);
   }
-  
+
   &-image {
     width: 100%;
     max-width: 400px;
@@ -241,12 +225,17 @@
     @include aspect-ratio(1, 1);
     object-fit: cover;
   }
-  
+
   &-text {
-    font-size: $font-size-base;
-    line-height: $line-height-base;
+    font-size: 16px;
+    line-height: 24px;
     color: $primary;
     margin-bottom: 20px;
+  }
+
+  &-title {
+    font-size: 35.2px;
+    line-height: 40.21px;
   }
 }
 
@@ -265,7 +254,7 @@
     max-width: 1000px;
     margin: 0 auto;
   }
-  
+
   &-text {
     font-size: $font-size-xl;
     line-height: 36px;
@@ -273,7 +262,7 @@
     font-style: italic;
     margin-bottom: $spacing-md;
   }
-  
+
   &-author {
     font-size: $font-size-base;
     color: $primary;
@@ -287,11 +276,36 @@
   @include section-padding($spacing-xxxl, $spacing-xxxl);
 }
 
-.form-container {
-  @include container;
-  
-  .section-title {
-    margin-bottom: $spacing-xxl;
+.contact {
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  &-form-title {
+    margin-bottom: $spacing-lg;
+    text-align: left;
+  }
+
+  &-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    object-fit: cover;
   }
 }
 
@@ -301,19 +315,19 @@
     &-inner {
       padding: 20px 20px;
     }
-    
+
     &-logo {
       width: 200px;
       height: auto;
     }
   }
-  
+
   .hero {
     &-content {
       padding: 0 $container-padding-mobile;
     }
   }
-  
+
   .service-container,
   .quote-content {
     padding: 0 $container-padding-mobile;

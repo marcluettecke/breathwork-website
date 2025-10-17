@@ -4,12 +4,19 @@
 
 // Container mixin
 @mixin container {
-  max-width: $container-max-width;
+  width: 80%;
   margin: 0 auto;
-  padding: 0 $container-padding;
-  
+
+  @media (max-width: $breakpoint-xl) {
+    width: 85%;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    width: 90%;
+  }
+
   @media (max-width: $breakpoint-md) {
-    padding: 0 $container-padding-mobile;
+    width: 95%;
   }
 }
 

@@ -18,29 +18,12 @@ const Home = () => {
               Mein Angebot
             </h2>
           </AnimatedSection>
-          
-          <div className="service-grid">
+
+          <div className="service-grid-single">
             <AnimatedSection animation="fade-up" delay={100}>
               <div className="service-card">
-                <img 
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/b7e3cc96-0fc7-4b42-a5d6-fec90d21bc13/Bild_2024-10-12_104905669-removebg-preview.png?format=500w"
-                  alt="Yoga"
-                  className="service-image"
-                />
-                <h3 className="service-title font-urbanist">Yoga</h3>
-                <p className="service-description">
-                  Vinyasa Yoga in persönlicher Atmosphäre: durch das Üben in kleinen Gruppen kann ich dich individuell assistieren und auf deine Bedürfnisse eingehen. Du kommst in deine Kraft und gleichzeitig findest du körperliche & geistige Ruhe.
-                </p>
-                <Link to="/yoga" className="service-button">
-                  mehr Informationen
-                </Link>
-              </div>
-            </AnimatedSection>
-            
-            <AnimatedSection animation="fade-up" delay={200}>
-              <div className="service-card">
-                <img 
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/5b00b5e3-3bb6-4a70-9ee7-b5da00b99be0/Bild_2024-10-12_105301838-removebg-preview.png?format=500w"
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ffcb12ab-5771-4851-acc6-4ead7b70c14e/Manuela+Cosic+Atemtherapie"
                   alt="Integrative Atemtherapie"
                   className="service-image"
                 />
@@ -68,20 +51,26 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-primary/90" />
         <div className="quote-content relative z-10">
-          <AnimatedSection animation="fade-in">
-            <div className="flex items-center justify-center mb-8">
-              <img 
-                src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/715cb0b7-5569-4f51-8f1a-2824765c9c35/Kein+Titel+%28150+x+40+cm%29+%281%29.png?format=300w"
-                alt="Leaf"
-                className="h-[150px] opacity-60"
-              />
-            </div>
-            <h2 className="quote-text font-urbanist">
-              "Deine Wahrheit ist dort, wo der Körper sich entspannt<br />
-              und der Atem frei fließt."
-            </h2>
-            <p className="quote-author">Judith Hennemann</p>
-          </AnimatedSection>
+          <div className="quote-grid">
+            <AnimatedSection animation="fade-in" delay={100}>
+              <div className="quote-logo-wrapper">
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/84059af2-a61a-40a9-a507-7692312e4825/0001_Manuela_Cosic_Yoga_Logo_Wei%C3%9F_CMYK.png"
+                  alt="Leaf"
+                  className="quote-logo"
+                />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection animation="fade-in">
+              <div className="quote-text-wrapper">
+                <h3 className="quote-text font-urbanist">
+                  "Deine Wahrheit ist dort, wo der Körper sich entspannt
+                  und der Atem frei fließt."
+                </h3>
+                <p className="quote-author">Judith Hennemann</p>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
@@ -91,14 +80,14 @@ const Home = () => {
           <AnimatedSection animation="fade-up">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div>
-                <img 
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/36a3d3f2-72cf-477d-b8c0-cf7f4df42beb/IMG-1113_Original.jpeg?format=750w"
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ae8fefc8-b8c2-4d6e-a3ee-412e9f6e736a/Manuela+Cosic+Yoga+und+Atem"
                   alt="Manuela Cosic"
                   className="about-image mx-auto"
                 />
               </div>
               <div>
-                <h2 className="section-title font-urbanist text-left">
+                <h2 className="section-title font-urbanist text-left about-title">
                   Über mich
                 </h2>
                 <p className="about-text">
@@ -134,13 +123,26 @@ const Home = () => {
 
       {/* Contact Form Section */}
       <section className="contact-section">
-        <div className="form-container">
-          <AnimatedSection animation="fade-up">
-            <h2 className="section-title font-urbanist text-center">Kontaktformular</h2>
-          </AnimatedSection>
-          <AnimatedSection animation="fade-up" delay={200}>
-            <ContactForm />
-          </AnimatedSection>
+        <div className="service-container">
+          <div className="contact-grid">
+            <div>
+              <AnimatedSection animation="fade-up">
+                <h2 className="section-title font-urbanist text-left contact-form-title">Kontaktformular</h2>
+              </AnimatedSection>
+              <AnimatedSection animation="fade-up" delay={200}>
+                <ContactForm />
+              </AnimatedSection>
+            </div>
+            <AnimatedSection animation="fade-up" delay={300}>
+              <div className="contact-image-wrapper">
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ddb74dc7-f81f-4a13-b849-401c8a3a046c/20250216_DSC05929.jpg"
+                  alt="Manuela Cosic Yogastunden in Köln und Pulheim"
+                  className="contact-image"
+                />
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
     </>

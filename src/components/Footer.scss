@@ -2,73 +2,128 @@
 @use '../styles/mixins' as *;
 
 .footer {
-  background-color: #6B8296; // Exact color from original
+  background-color: #6B8296;
   color: $white;
-  padding: 60px 0 40px;
+  padding: 80px 0 40px;
   margin-top: 0;
-  
+
   &-container {
-    max-width: 1200px;
     @include container;
   }
-  
+
   &-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-xl;
-    margin-bottom: 50px;
-    
-    @media (max-width: $breakpoint-md) {
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+    align-items: start;
+
+    @media (max-width: $breakpoint-lg) {
       grid-template-columns: 1fr;
-      gap: $spacing-lg;
-      text-align: center;
+      gap: $spacing-xl;
     }
   }
-  
-  &-column {
-    &:first-child {
-      .footer-title {
-        margin-bottom: 20px;
-      }
-    }
+
+  &-logo-column {
+    display: flex;
+    align-items: flex-start;
   }
-  
-  &-title {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 16px;
-    color: $white;
-    letter-spacing: 0.02em;
+
+  &-logo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
   }
-  
-  &-links {
+
+  &-middle-column {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
   }
-  
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &-text {
+    color: $white;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  &-badge {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+  }
+
+  &-legal-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  &-contact-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  &-address {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &-contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &-button {
+    padding: 14px 28px;
+    background-color: transparent;
+    color: $white;
+    border: 2px solid $white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: $white;
+      color: $primary;
+    }
+  }
+
   &-link {
-    color: rgba($white, 0.85);
+    color: $white;
     text-decoration: none;
     font-size: 16px;
     font-weight: 300;
-    transition: color 0.2s ease;
-    
+    transition: opacity 0.2s ease;
+
     &:hover {
-      color: $white;
+      opacity: 0.8;
     }
   }
-  
+
   &-bottom {
     padding-top: 40px;
-    border-top: 1px solid rgba($white, 0.15);
+    border-top: 1px solid rgba($white, 0.2);
     text-align: center;
   }
-  
+
   &-copyright {
     font-size: 14px;
-    color: rgba($white, 0.7);
+    color: rgba($white, 0.8);
     font-weight: 300;
-    letter-spacing: 0.01em;
+    margin: 0;
   }
 }
