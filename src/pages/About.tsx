@@ -1,4 +1,6 @@
 import AnimatedSection from '../components/ui/AnimatedSection'
+import AboutSection from '../components/AboutSection'
+import AboutDetailSection from '../components/AboutDetailSection'
 import './About.scss'
 
 const About = () => {
@@ -38,44 +40,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Content Section */}
-      <section className="about-content-section">
-        <div className="about-container">
-          <AnimatedSection animation="fade-up">
-            <div className="about-content-grid">
-              <div className="about-image-column">
-                <img
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/36a3d3f2-72cf-477d-b8c0-cf7f4df42beb/IMG-1113_Original.jpeg?format=750w"
-                  alt="Manuela Cosic"
-                  className="about-portrait"
-                />
-              </div>
-              
-              <div className="about-text-column">
-                <h2 className="about-section-title">Über mich</h2>
-                
-                <p className="about-text">
-                  Hallo, ich bin Manuela.
-                </p>
-                
-                <p className="about-text">
-                  Meine Leidenschaft für Yoga und Atemarbeit begleitet mich seit vielen Jahren. 
-                  Nach meiner Ausbildung zur Yogalehrerin und integrativen Atemtherapeutin ist es 
-                  mir eine Herzensangelegenheit, Menschen auf ihrem Weg zu mehr innerer Balance 
-                  und Lebensfreude zu begleiten.
-                </p>
-                
-                <p className="about-text">
-                  In meinen Kursen und Einzelsitzungen schaffe ich einen sicheren Raum, in dem du 
-                  dich fallen lassen und ganz bei dir ankommen kannst. Dabei ist es mir wichtig, 
-                  individuell auf deine Bedürfnisse einzugehen und dich liebevoll in deinem 
-                  persönlichen Prozess zu unterstützen.
-                </p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* About Detail Section */}
+      <AboutDetailSection />
 
       {/* Qualifications Section */}
       <section className="qualifications-section">

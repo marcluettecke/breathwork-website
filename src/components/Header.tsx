@@ -40,7 +40,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
-                `header-nav-item ${isActive ? "opacity-90" : ""}`
+                `header-nav-item ${isActive ? "active" : ""}`
               }
             >
               {item.label}

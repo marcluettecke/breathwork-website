@@ -4,6 +4,7 @@ import ServiceCard from '../components/ServiceCard'
 import ContactForm from '../components/ContactForm'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import TestimonialSlider from '../components/TestimonialSlider'
+import AboutSection from '../components/AboutSection'
 
 const Home = () => {
   return (
@@ -75,38 +76,7 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="about-section">
-        <div className="service-container">
-          <AnimatedSection animation="fade-up">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div>
-                <img
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ae8fefc8-b8c2-4d6e-a3ee-412e9f6e736a/Manuela+Cosic+Yoga+und+Atem"
-                  alt="Manuela Cosic"
-                  className="about-image mx-auto"
-                />
-              </div>
-              <div>
-                <h2 className="section-title font-urbanist text-left about-title">
-                  Über mich
-                </h2>
-                <p className="about-text">
-                  Ich bin Manuela, Yoga Lehrerin, integrative Atemtherapeutin und Achtsamkeitstrainerin.
-                </p>
-                <p className="about-text">
-                  Meine Leidenschaft ist es, Menschen zu berühren. Dies tue ich mit Händen, Worten, aber auch mit meiner eigenen Präsenz und Aufmerksamkeit.
-                </p>
-                <p className="about-text">
-                  Mein Ziel ist es, meine Schüler und Klienten soweit sicher zu begleiten, dass sie sich selbst wieder ein Stück näher kommen und wieder die Verbindung zu sich selbst spüren können.
-                </p>
-                <Link to="/about" className="service-button">
-                  Erfahre mehr
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <AboutSection />
 
       {/* Testimonials Section */}
       <section className="testimonials-section">

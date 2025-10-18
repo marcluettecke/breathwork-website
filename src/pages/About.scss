@@ -48,18 +48,28 @@
 // About Content Section
 .about-content-section {
   background-color: $secondary;
-  @include section-padding($spacing-xxxl, $spacing-xxxl);
+  padding: 60px 0 80px 0;
 }
 
 .about-container {
-  @include container;
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 40px;
+  
+  @media (max-width: $breakpoint-md) {
+    width: 95%;
+    padding: 0 20px;
+  }
 }
 
 .about-content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $spacing-xxl;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 40px;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   
   @media (max-width: $breakpoint-md) {
     grid-template-columns: 1fr;
@@ -68,14 +78,22 @@
 }
 
 .about-image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   .about-portrait {
-    width: 100%;
-    max-width: 400px;
-    border-radius: $border-radius-circle;
-    @include aspect-ratio(1, 1);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto;
     display: block;
+    background-color: #f0f0f0; // Fallback background to see if container is there
+    
+    @media (max-width: $breakpoint-md) {
+      width: 250px;
+      height: 250px;
+    }
   }
 }
 
@@ -88,14 +106,14 @@
   }
   
   .about-text {
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    color: $primary;
-    margin-bottom: $spacing-md;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6B8296;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
     
-    &:first-of-type {
-      font-size: 18px;
-      font-weight: 500;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
