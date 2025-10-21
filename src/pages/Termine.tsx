@@ -1,124 +1,185 @@
-import Section from '../components/ui/Section'
-import Container from '../components/ui/Container'
-import Heading from '../components/ui/Heading'
-import Text from '../components/ui/Text'
-import Button from '../components/ui/Button'
-import { EventProps } from '../models'
+import { useState } from 'react'
+import FAQItem from '../components/FAQItem'
+import ContactFormSection from '../components/ContactFormSection'
+import '../styles/termine.scss'
 
-const EventCard = ({ title, date, time, location, description, price }: EventProps) => {
+interface ScheduleCardProps {
+  title: string
+  time: string
+  location: string
+  nextCourse?: string
+  image: string
+  expandedContent?: {
+    address?: string[]
+    price?: string
+    details?: string
+  }
+}
+
+const ScheduleCard = ({ title, time, location, nextCourse, image, expandedContent }: ScheduleCardProps) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-      <Heading level={4} className="text-primary mb-3">{title}</Heading>
-      <div className="space-y-2 mb-4 text-sm text-gray-600">
-        <p>📅 {date}</p>
-        <p>🕐 {time}</p>
-        <p>📍 {location}</p>
-        <p>💶 {price}</p>
+    <div className="schedule-card">
+      <div className="card-image-wrapper">
+        <img src={image} alt={title} />
       </div>
-      <Text className="mb-4">{description}</Text>
-      <Button as="link" to="/kontakt" size="sm">
-        Anmelden
-      </Button>
+      <div className="card-content">
+        <h3>{title}</h3>
+        <p className="time">{time || '\u00A0'}</p>
+        <p className="location">{location}</p>
+        <p className="next-course">{nextCourse ? `Nächster Kursstart: ${nextCourse}` : '\u00A0'}</p>
+      </div>
+      
+      <button 
+        className="info-button"
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isExpanded}
+      >
+        <span>Mehr Informationen</span>
+        <span className={`plus-icon ${isExpanded ? 'expanded' : ''}`}>
+          {isExpanded ? '−' : '+'}
+        </span>
+      </button>
+
+      <div className={`expanded-content ${isExpanded ? 'show' : ''}`}>
+        {expandedContent?.address && (
+          <div className="address-section">
+            {expandedContent.address.map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+          </div>
+        )}
+        {expandedContent?.price && (
+          <div className="price-section">
+            <p>{expandedContent.price}</p>
+          </div>
+        )}
+        {expandedContent?.details && (
+          <div className="details-section">
+            <p>{expandedContent.details}</p>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
 
 const Termine = () => {
-  const upcomingEvents = [
+  const scheduleData: ScheduleCardProps[] = [
     {
-      title: "Yoga & Atem Workshop",
-      date: "Samstag, 15. Februar 2025",
-      time: "14:00 - 17:00 Uhr",
-      location: "Köln-Nippes",
-      description: "Ein intensiver Workshop, der Yoga und bewusste Atmung verbindet. Perfekt für alle, die tiefer in ihre Praxis eintauchen möchten.",
-      price: "65€",
+      title: "Montags",
+      time: "19:30 Uhr - 21:00 Uhr",
+      location: "Familienzentrum Hand in Hand Pulheim",
+      nextCourse: "13.10.25",
+      image: "/termine-monday.jpg",
+      expandedContent: {
+        address: [
+          "Hand in Hand e. V.",
+          "Von-Bodelschwingh-Str. 25",
+          "50259 Pulheim"
+        ],
+        price: "Preis für 10 Einheiten: 190€\nmax. Teilnehmerzahl: 12",
+        details: "Bitte bringe deine Hilfsmittel wie Yogablock, Yogagurt etc. mit."
+      }
     },
     {
-      title: "Atemreise - Gruppenession",
-      date: "Sonntag, 23. Februar 2025",
-      time: "10:00 - 12:00 Uhr",
-      location: "Pulheim",
-      description: "Gemeinsam atmen, loslassen und neue Kraft schöpfen. Eine transformative Erfahrung in der Gruppe.",
-      price: "35€",
+      title: "Mittwochs",
+      time: "19:45 Uhr - 21:15 Uhr",
+      location: "Sunny Side Up Belgisches Viertel Köln",
+      nextCourse: "24.9.25",
+      image: "/termine-wednesday.jpg",
+      expandedContent: {
+        address: [
+          "Sunny Side Up Studio",
+          "Brüsseler Str. 24",
+          "50674 Köln"
+        ],
+        price: "Preis für 10 Einheiten: 210€\nmax. Teilnehmerzahl: 10",
+        details: "Der perfekte Ausgleich zur Wochenmitte. Fließende Bewegungen und bewusste Atmung für mehr Energie."
+      }
     },
     {
-      title: "Frühlingsretreat",
-      date: "21. - 23. März 2025",
-      time: "Freitag bis Sonntag",
-      location: "Eifel",
-      description: "Ein Wochenende voller Yoga, Atemarbeit und Naturverbindung. Komm zur Ruhe und tanke neue Energie.",
-      price: "350€",
+      title: "Personal Yoga",
+      time: "",
+      location: "Individuell und nach Vereinbarung.",
+      image: "/termine-personal.jpg",
+      expandedContent: {
+        price: "Einzelstunde: 75€\nDoppelstunde: 120€\n5er-Karte: 350€",
+        details: "Maßgeschneiderte Yoga-Praxis, die sich ganz nach deinen Bedürfnissen richtet. Ob bei dir zu Hause, im Studio oder online – gemeinsam finden wir den perfekten Rahmen für deine persönliche Entwicklung."
+      }
+    }
+  ]
+
+  const faqData = [
+    {
+      question: "Was ist integrative Atemtherapie?",
+      answer: "Integrative Atemtherapie ist eine ganzheitliche und körperorientierte Therapiemethode, welche den bewussten Atem als Zugang zu körperlichen, emotionalen und mentalen Prozessen nutzt.\n\nZiel ist es, festgefahrene Emotionen, alte Lebenserfahrungen oder Trauma zu erkennen, zu lösen und zu verarbeiten sowie das allgemeine Wohlbefinden und die Selbstregulation zu stärken.\n\nIntegrative Atemtherapie richtet sich an alle, die entweder gezielt an inneren Themen arbeiten möchten oder sich persönliches Wachstum und mehr Lebensqualität wünschen."
     },
+    {
+      question: "Wie läuft eine Atemsitzung ab?",
+      answer: "Eine Atemsitzung findet immer 1:1 in einem persönlichen Setting statt. Jede Sitzung ist dabei sehr individuell und wird von mir achtsam und wertfrei begleitet.\n\nBei \"Atemanfängern\" führe ich eine sanfte Heranführung an den (verbundenen) Atem durch und wir schaffen zunächst gemeinsam einen sicheren Raum für dein Anliegen.\n\nSpätere Sitzungen laufen wie folgt ab:\nNach Klärung deines Anliegens leite ich dich durch Körper- und Atemübungen gezielt in einen entspannten Zustand.\nIm Anschluss folgt der kontinuierliche verbundene Atem. Hier zeigen sich oft emotionale oder körperliche Blockaden, welche wir gemeinsam sanft anschauen, annehmen und integrieren.\nAm Ende ist meist eine tiefe Entspannung spürbar, es wird oft eine innere Ruhe und Klarheit empfunden."
+    },
+    {
+      question: "Wie lange dauert eine Atemsitzung?",
+      answer: "Eine Atemsitzung dauert gewöhnlich 60-90 Minuten."
+    },
+    {
+      question: "Wann finden die Termine statt?",
+      answer: "Termine finden individuell nach Vereinbarung statt."
+    },
+    {
+      question: "Wo findet die Atemsitzung statt?",
+      answer: "Termine sind sowohl in Köln als auch in Pulheim buchbar.\n\nNach einer ersten Sitzung vor Ort, können weitere Termine auch online erfolgen.\n\nAtemsitzung in Köln – Belgisches Viertel\nZentrum für Wohlbefinden, Sunny Side Up\n\nAtemsitzung in Pulheim - Stommeln\nPure Pulheim\nJoseph-Gladbach-Platz 10"
+    },
+    {
+      question: "Was kostet eine Atemsitzung?",
+      answer: "In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.\n\n60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 120,00 €.\n\nTerminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung."
+    }
   ]
 
   return (
-    <>
-      {/* Hero Section */}
-      <Section className="pt-32 pb-20 bg-gray-50">
-        <Container>
-          <Heading level={1} className="text-primary mb-6 text-center">Termine & Workshops</Heading>
-          <Text className="text-center text-lg max-w-2xl mx-auto">
-            Entdecke meine aktuellen Kurse, Workshops und besondere Events. 
-            Ich freue mich darauf, dich auf deinem Weg zu begleiten.
-          </Text>
-        </Container>
-      </Section>
+    <div className="termine-page">
+      {/* Hero Section with Background Image */}
+      <section className="termine-hero">
+        <div className="hero-overlay"></div>
+      </section>
 
-      {/* Regular Classes Section */}
-      <Section className="py-20">
-        <Container>
-          <Heading level={2} className="text-primary mb-12 text-center">Regelmäßige Kurse</Heading>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-primary-light/10 rounded-lg p-8">
-              <Heading level={3} className="text-primary mb-4">Vinyasa Yoga</Heading>
-              <div className="space-y-2 mb-4">
-                <Text><strong>Montags:</strong> 18:30 - 20:00 Uhr</Text>
-                <Text><strong>Mittwochs:</strong> 9:00 - 10:30 Uhr</Text>
-                <Text><strong>Ort:</strong> Köln-Nippes</Text>
-              </div>
-              <Button as="link" to="/yoga" variant="primary" size="sm">
-                Mehr erfahren
-              </Button>
-            </div>
-            
-            <div className="bg-primary-light/10 rounded-lg p-8">
-              <Heading level={3} className="text-primary mb-4">Atemtherapie</Heading>
-              <div className="space-y-2 mb-4">
-                <Text><strong>Einzelsitzungen</strong></Text>
-                <Text>Termine nach Vereinbarung</Text>
-                <Text><strong>Ort:</strong> Köln-Nippes oder bei dir</Text>
-              </div>
-              <Button as="link" to="/atemtherapie" variant="primary" size="sm">
-                Mehr erfahren
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      {/* Main Content Section */}
+      <section className="termine-content">
+        {/* Title Section */}
+        <div className="termine-header">
+          <h1>Termine</h1>
+        </div>
 
-      {/* Upcoming Events Section */}
-      <Section className="py-20 bg-gray-50">
-        <Container>
-          <Heading level={2} className="text-primary mb-12 text-center">Kommende Veranstaltungen</Heading>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event, index) => (
-              <EventCard key={index} {...event} />
+        {/* Trial Info */}
+        <div className="trial-info">
+          <p>Eine Probestunde ist jederzeit möglich, sprich mich einfach an!</p>
+        </div>
+
+        {/* Schedule Cards */}
+        <div className="schedule-container">
+          {scheduleData.map((schedule, index) => (
+            <ScheduleCard key={index} {...schedule} />
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ Section with blue background */}
+      <section className="termine-faq">
+        <div className="faq-container">
+          <h2>Integrative Atemtherapie</h2>
+          <div className="faq-list">
+            {faqData.map((faq, index) => (
+              <FAQItem key={index} {...faq} />
             ))}
           </div>
-          
-          <div className="mt-12 text-center">
-            <Text className="mb-4">
-              Möchtest du über neue Termine informiert werden?
-            </Text>
-            <Button as="link" to="/kontakt">
-              Newsletter abonnieren
-            </Button>
-          </div>
-        </Container>
-      </Section>
-    </>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <ContactFormSection />
+    </div>
   )
 }
 

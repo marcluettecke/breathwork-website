@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
-import ContactForm from '../components/ContactForm'
+import ContactFormSection from '../components/ContactFormSection'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import TestimonialSlider from '../components/TestimonialSlider'
 import AboutSection from '../components/AboutSection'
@@ -92,29 +92,7 @@ const Home = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="contact-section">
-        <div className="service-container">
-          <div className="contact-grid">
-            <div>
-              <AnimatedSection animation="fade-up">
-                <h2 className="section-title font-urbanist text-left contact-form-title">Kontaktformular</h2>
-              </AnimatedSection>
-              <AnimatedSection animation="fade-up" delay={200}>
-                <ContactForm />
-              </AnimatedSection>
-            </div>
-            <AnimatedSection animation="fade-up" delay={300}>
-              <div className="contact-image-wrapper">
-                <img
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ddb74dc7-f81f-4a13-b849-401c8a3a046c/20250216_DSC05929.jpg"
-                  alt="Manuela Cosic Yogastunden in Köln und Pulheim"
-                  className="contact-image"
-                />
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
+      <ContactFormSection />
     </>
   )
 }
