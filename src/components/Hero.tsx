@@ -15,6 +15,14 @@ const Hero = () => {
 
       <div className='relative z-10 w-full hero-content-wrapper'>
         <div className='hero-content'>
+          <h1 className='hero-title font-urbanist'>
+            Vinyasa Yoga.
+            <br />
+            Integrative Atemtherapie.
+            <br />
+            In Köln & Pulheim.
+          </h1>
+
           <div className='hero-text-wrapper'>
             <p className='hero-text'>
               Dein Körper und dein Atem spiegeln den Zustand deines Geistes und
@@ -25,14 +33,6 @@ const Hero = () => {
               deinem Alltag.
             </p>
           </div>
-
-          <h1 className='hero-title font-urbanist'>
-            Vinyasa Yoga.
-            <br />
-            Integrative Atemtherapie.
-            <br />
-            In Köln & Pulheim.
-          </h1>
 
           <div className='hero-signature'>
             <img

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { HeaderProps, NavItem } from "../models";
 import "./Header.scss";
 import Logo from "./Logo";
@@ -10,8 +10,14 @@ const navItems: NavItem[] = [
   { label: "Termine", path: "/termine" },
 ];
 
+// Pages that have hero sections and should start with transparent header
+const transparentHeaderPages = ['/', '/kontakt'];
+
 const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  const shouldStartTransparent = transparentHeaderPages.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +33,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
   };
 
   return (
-    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+    <header className={`header ${isScrolled ? "scrolled" : ""} ${shouldStartTransparent && !isScrolled ? "transparent" : ""}`}>
       <div className='header-inner'>
         <Link to='/' className='flex items-center'>
           <Logo />
@@ -80,11 +86,11 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
 
       {/* Mobile Navigation */}
       <nav
-        className={`lg:hidden fixed inset-x-0 top-24 bg-white shadow-lg transition-transform duration-300 ${
-          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+        className={`lg:hidden fixed inset-x-0 top-0 bg-white shadow-lg transition-transform duration-300 ${
+          isMobileMenuOpen ? "translate-y-24" : "-translate-y-full"
         }`}
       >
-        <div className='container mx-auto px-4 py-4'>
+        <div className='container mx-auto px-4 py-4 pt-28'>
           {navItems.map((item) => (
             <NavLink
               key={item.path}

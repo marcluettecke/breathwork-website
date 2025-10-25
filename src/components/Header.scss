@@ -27,9 +27,13 @@
   }
 
   &-nav {
-    display: flex;
     align-items: center;
     gap: $header-nav-gap;
+    display: flex;
+
+    @media (max-width: 1023px) {
+      display: none !important;
+    }
 
     &-item {
       font-size: $font-size-base;
@@ -88,11 +92,3 @@
   }
 }
 
-// Only hide navigation on very small screens (phones)
-@media (max-width: 640px) {
-  .header {
-    &-nav {
-      display: none;
-    }
-  }
-}

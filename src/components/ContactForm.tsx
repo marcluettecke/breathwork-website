@@ -61,11 +61,6 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form-wrapper">
-      <div className="contact-intro">
-        <p>Du hast Fragen zu meinen Yoga Kursen oder möchtest dich direkt anmelden?</p>
-        <p>Du interessierst dich für Atemtherapie oder möchtest einen Termin für eine individuelle Atemsitzung vereinbaren? Schreib mir gerne - ich freue mich auf deine Nachricht.</p>
-      </div>
-      
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-row">
           <label className="form-label">
