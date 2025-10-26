@@ -22,9 +22,13 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
       </button>
       <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
         <div className="faq-answer-content">
-          {answer.split('\n\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          {answer ? (
+            answer.split('\n\n').map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))
+          ) : (
+            <p>Inhalt folgt in Kürze.</p>
+          )}
         </div>
       </div>
     </div>

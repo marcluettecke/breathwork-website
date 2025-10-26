@@ -1,50 +1,5 @@
-import { useState } from 'react'
+import FAQItem from '../components/FAQItem'
 import '../styles/atemtherapie.scss'
-
-interface FAQItemProps {
-  question: string
-  answer: string
-}
-
-const FAQItem = ({ question, answer }: FAQItemProps) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <div className="faq-item">
-      <button 
-        className="faq-question"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
-        <span>{question}</span>
-        <svg 
-          className={`faq-chevron ${isOpen ? 'open' : ''}`}
-          width="24" 
-          height="24" 
-          viewBox="0 0 24 24" 
-          fill="none"
-        >
-          <path 
-            d="M6 9L12 15L18 9" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-      {answer && (
-        <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
-          <div className="faq-answer-content">
-            {answer.split('\n\n').map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
 
 const Atemtherapie = () => {
   return (
@@ -154,29 +109,47 @@ Ziel ist es, festgefahrene Emotionen, alte Lebenserfahrungen oder Trauma zu erke
 Integrative Atemtherapie richtet sich an alle, die entweder gezielt an inneren Themen arbeiten möchten oder sich persönliches Wachstum und mehr Lebensqualität wünschen."
           />
           
-          <FAQItem 
+          <FAQItem
             question="Wie läuft eine Atemsitzung ab?"
-            answer=""
+            answer="Eine Atemsitzung findet immer 1:1 in einem persönlichen Setting statt. Jede Sitzung ist dabei sehr individuell und wird von mir achtsam und wertfrei begleitet.
+
+Bei 'Atemanfängern' führe ich eine sanfte Heranführung an den (verbundenen) Atem durch und wir schaffen zunächst gemeinsam einen sicheren Raum für dein Anliegen.
+
+Spätere Sitzungen laufen wie folgt ab:
+Nach Klärung deines Anliegens leite ich dich durch Körper- und Atemübungen gezielt in einen entspannten Zustand.
+Im Anschluss folgt der kontinuierliche verbundene Atem. Hier zeigen sich oft emotionale oder körperliche Blockaden, welche wir gemeinsam sanft anschauen, annehmen und integrieren.
+Am Ende ist meist eine tiefe Entspannung spürbar, es wird oft eine innere Ruhe und Klarheit empfunden."
           />
-          
-          <FAQItem 
+
+          <FAQItem
             question="Wie lange dauert eine Atemsitzung?"
-            answer=""
+            answer="Eine Atemsitzung dauert gewöhnlich 60-90 Minuten."
           />
-          
-          <FAQItem 
+
+          <FAQItem
             question="Wann finden die Termine statt?"
-            answer=""
+            answer="Termine finden individuell nach Vereinbarung statt."
           />
-          
-          <FAQItem 
+
+          <FAQItem
             question="Wo findet die Atemsitzung statt?"
-            answer=""
+            answer="Termine sind sowohl in Köln als auch in Pulheim buchbar. Nach einer ersten Sitzung vor Ort können weitere Termine auch online erfolgen.
+
+Atemsitzung in Köln– Belgisches Viertel
+Zentrum für Wohlbefinden, Sunny Side Up
+
+Atemsitzung in Pulheim - Stommeln
+Pure Pulheim
+Joseph-Gladbach-Platz 10"
           />
-          
-          <FAQItem 
+
+          <FAQItem
             question="Was kostet eine Atemsitzung?"
-            answer=""
+            answer="In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.
+
+60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 120,00 €.
+
+Terminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung."
           />
         </div>
       </section>
