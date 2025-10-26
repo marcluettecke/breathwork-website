@@ -86,15 +86,23 @@ const TestimonialSlider = () => {
     }
   }
 
-  const cardWidthPercent = 100 / cardsToShow
+  // Desktop: 3 cards with 2rem gap
+  // Mobile: 1 card with padding
   const gapRem = 2
-  const cardWidthCalc = cardsToShow === 1
-    ? '100%'
-    : `calc(${cardWidthPercent}% - ${(gapRem * (cardsToShow - 1)) / cardsToShow}rem)`
 
-  const transformCalc = cardsToShow === 1
-    ? `translateX(calc(-${currentIndex * 100}% - ${currentIndex * gapRem}rem + 0rem))`
-    : `translateX(calc(-${currentIndex * cardWidthPercent}% - ${currentIndex * (gapRem / cardsToShow)}rem))`
+  let cardWidthCalc, transformCalc
+
+  if (cardsToShow === 1) {
+    // Mobile: single card, full width within padded container
+    cardWidthCalc = '100%'
+    transformCalc = `translateX(calc(-${currentIndex * 100}% - ${currentIndex * gapRem}rem))`
+  } else {
+    // Desktop: 3 cards
+    const cardWidthPercent = 100 / cardsToShow
+    const gapPerCard = (gapRem * (cardsToShow - 1)) / cardsToShow
+    cardWidthCalc = `calc(${cardWidthPercent}% - ${gapPerCard}rem)`
+    transformCalc = `translateX(calc(-${currentIndex * cardWidthPercent}% - ${currentIndex * (gapRem / cardsToShow)}rem))`
+  }
 
   return (
     <div className="relative">
@@ -128,16 +136,16 @@ const TestimonialSlider = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows - visible on both mobile and desktop */}
+      {/* Navigation Arrows - centered below testimonials on both mobile and desktop */}
       {testimonials.length > cardsToShow && (
         <>
           <button
             onClick={prevCard}
             disabled={currentIndex === 0}
-            className="absolute left-1/2 bottom-0 -translate-x-20 translate-y-16 md:left-0 md:top-1/2 md:-translate-y-1/2 md:-translate-x-12 md:translate-y-0 bg-white hover:bg-white text-primary p-3 rounded-full shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute left-1/2 bottom-0 -translate-x-20 translate-y-16 bg-white hover:bg-white text-primary p-2 rounded-full shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Previous card"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -145,10 +153,10 @@ const TestimonialSlider = () => {
           <button
             onClick={nextCard}
             disabled={currentIndex >= maxIndex}
-            className="absolute right-1/2 bottom-0 translate-x-20 translate-y-16 md:right-0 md:top-1/2 md:-translate-y-1/2 md:translate-x-12 md:translate-y-0 bg-white hover:bg-white text-primary p-3 rounded-full shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute right-1/2 bottom-0 translate-x-20 translate-y-16 bg-white hover:bg-white text-primary p-2 rounded-full shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Next card"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
