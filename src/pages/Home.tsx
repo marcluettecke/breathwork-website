@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
-import ServiceCard from '../components/ServiceCard'
 import ContactFormSection from '../components/ContactFormSection'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import TestimonialSlider from '../components/TestimonialSlider'

@@ -1,20 +1,19 @@
-import { ReactNode } from 'react'
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import { AnimatedSectionProps } from '../../models'
 
-const AnimatedSection = ({ 
-  children, 
-  className = '', 
+const AnimatedSection = ({
+  children,
+  className = '',
   delay = 0,
-  animation = 'fade-up' 
+  animation = 'fade-up'
 }: AnimatedSectionProps) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 })
 
   const animationClasses = {
     'fade-up': 'translate-y-10 opacity-0',
     'fade-in': 'opacity-0',
-    'fade-right': '-translate-x-10 opacity-0',
-    'fade-left': 'translate-x-10 opacity-0',
+    'slide-right': '-translate-x-10 opacity-0',
+    'slide-left': 'translate-x-10 opacity-0',
   }
 
   const visibleClasses = 'translate-y-0 translate-x-0 opacity-100'

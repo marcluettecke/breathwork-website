@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { TextProps } from '../../models'
 
 const Text = ({ children, className = '', as = 'p', size = 'base' }: TextProps) => {

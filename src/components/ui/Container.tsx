@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { ContainerProps } from '../../models'
 
 const Container = ({ children, className = '', maxWidth = '6xl' }: ContainerProps) => {

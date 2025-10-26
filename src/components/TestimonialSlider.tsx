@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import AnimatedSection from './ui/AnimatedSection'
 import { Testimonial } from '../models'
 import './TestimonialSlider.scss'
 
@@ -69,8 +68,6 @@ const TestimonialSlider = () => {
       setTimeout(() => setIsTransitioning(false), 500)
     }
   }
-
-  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + cardsToShow)
 
   return (
     <div className="relative">

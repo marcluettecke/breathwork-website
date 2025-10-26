@@ -1,5 +1,4 @@
 import AnimatedSection from '../components/ui/AnimatedSection'
-import AboutSection from '../components/AboutSection'
 import AboutDetailSection from '../components/AboutDetailSection'
 import './About.scss'
 

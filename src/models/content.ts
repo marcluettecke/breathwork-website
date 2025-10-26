@@ -2,6 +2,8 @@ export interface Testimonial {
   id: number
   text: string
   author: string
+  role: string
+  image: string
 }
 
 export interface ServiceCardProps {

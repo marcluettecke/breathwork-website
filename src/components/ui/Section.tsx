@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { SectionProps } from '../../models'
 
 const Section = ({ children, className = '', backgroundImage, overlay = false }: SectionProps) => {

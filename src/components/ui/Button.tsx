@@ -1,24 +1,24 @@
-import { ReactNode, ButtonHTMLAttributes } from 'react'
 import { Link } from 'react-router-dom'
 import { ButtonProps } from '../../models'
 
-const Button = ({ 
-  children, 
-  variant = 'primary', 
-  size = 'md', 
+const Button = ({
+  children,
+  variant = 'primary',
+  size = 'md',
   fullWidth = false,
   as = 'button',
   to,
   href,
   className = '',
-  ...props 
+  ...props
 }: ButtonProps) => {
   const baseClasses = 'inline-block rounded-button transition-colors duration-200 font-normal'
-  
+
   const variantClasses = {
     primary: 'bg-primary text-white hover:bg-primary-dark',
     secondary: 'bg-primary-light text-white hover:bg-primary',
     white: 'bg-white text-black hover:bg-gray-100',
+    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
   }
   
   const sizeClasses = {

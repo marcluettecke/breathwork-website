@@ -3,7 +3,7 @@ import Heading from './ui/Heading'
 import Text from './ui/Text'
 import { ServiceCardProps } from '../models'
 
-const ServiceCard = ({ title, description, imagePath, link }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, link }: ServiceCardProps) => {
   // Use placeholder images for now
   const placeholderImages = {
     yoga: 'https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?auto=compress&cs=tinysrgb&w=800',
