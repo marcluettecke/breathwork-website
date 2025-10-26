@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Testimonial } from '../models'
 import './TestimonialSlider.scss'
 
@@ -50,7 +50,24 @@ const testimonials: Testimonial[] = [
 const TestimonialSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const cardsToShow = 3
+  const [cardsToShow, setCardsToShow] = useState(3)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCardsToShow(1)
+        setCurrentIndex(0)
+      } else {
+        setCardsToShow(3)
+        setCurrentIndex(0)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const maxIndex = testimonials.length - cardsToShow
 
   const nextCard = () => {
@@ -69,18 +86,28 @@ const TestimonialSlider = () => {
     }
   }
 
+  const cardWidthPercent = 100 / cardsToShow
+  const gapRem = 2
+  const cardWidthCalc = cardsToShow === 1
+    ? '100%'
+    : `calc(${cardWidthPercent}% - ${(gapRem * (cardsToShow - 1)) / cardsToShow}rem)`
+
+  const transformCalc = cardsToShow === 1
+    ? `translateX(-${currentIndex * 100}%)`
+    : `translateX(calc(-${currentIndex * cardWidthPercent}% - ${currentIndex * (gapRem / cardsToShow)}rem))`
+
   return (
     <div className="relative">
       <div className="testimonial-slider-wrapper overflow-hidden">
         <div
           className="testimonial-slider-track flex transition-transform duration-500 ease-in-out"
           style={{
-            gap: '2rem',
-            transform: `translateX(calc(-${currentIndex * 33.333}% - ${currentIndex * 0.667}rem))`
+            gap: cardsToShow === 1 ? '0' : '2rem',
+            transform: transformCalc
           }}
         >
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="flex-shrink-0" style={{ width: 'calc(33.333% - 1.333rem)' }}>
+            <div key={testimonial.id} className="flex-shrink-0" style={{ width: cardWidthCalc }}>
               <div className="testimonial-card h-full">
                 <div className="testimonial-image-wrapper">
                   <img
@@ -101,13 +128,13 @@ const TestimonialSlider = () => {
         </div>
       </div>
 
+      {/* Navigation Arrows - visible on both mobile and desktop */}
       {testimonials.length > cardsToShow && (
         <>
-          {/* Navigation Arrows */}
           <button
             onClick={prevCard}
             disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white/80 hover:bg-white text-primary p-3 rounded-full shadow-md transition-all hidden md:block disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute left-1/2 bottom-0 -translate-x-20 translate-y-16 md:left-0 md:top-1/2 md:-translate-y-1/2 md:-translate-x-12 md:translate-y-0 bg-white hover:bg-white text-primary p-3 rounded-full shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Previous card"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +145,7 @@ const TestimonialSlider = () => {
           <button
             onClick={nextCard}
             disabled={currentIndex >= maxIndex}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white/80 hover:bg-white text-primary p-3 rounded-full shadow-md transition-all hidden md:block disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute right-1/2 bottom-0 translate-x-20 translate-y-16 md:right-0 md:top-1/2 md:-translate-y-1/2 md:translate-x-12 md:translate-y-0 bg-white hover:bg-white text-primary p-3 rounded-full shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Next card"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

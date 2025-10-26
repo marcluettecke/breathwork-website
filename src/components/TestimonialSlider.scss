@@ -4,6 +4,11 @@
 .testimonials-section {
   background-color: $primary;
   @include section-padding;
+
+  // Add extra padding on mobile for navigation arrows
+  @media (max-width: $breakpoint-md - 1) {
+    padding-bottom: 120px;
+  }
 }
 
 .testimonial {
