@@ -10,6 +10,11 @@
   z-index: $z-index-header;
   transition: $transition-slow;
 
+  // Mobile-specific header height
+  @media (max-width: $breakpoint-lg - 1) {
+    height: $header-height-mobile;
+  }
+
   &-inner {
     padding: $header-padding-y $header-padding-x;
     display: flex;
@@ -19,11 +24,21 @@
     max-width: $container-max-width;
     margin: 0 auto;
     position: relative;
+
+    // Mobile padding
+    @media (max-width: $breakpoint-lg - 1) {
+      padding: $header-padding-mobile;
+    }
   }
 
   &-logo {
     height: $header-logo-height;
     width: auto;
+
+    // Mobile logo size
+    @media (max-width: $breakpoint-lg - 1) {
+      height: $header-logo-height-mobile;
+    }
   }
 
   &-nav {
@@ -68,6 +83,11 @@
     box-shadow: 0 2px 4px rgba($black, 0.1);
     height: $header-height-scrolled;
 
+    // Mobile scrolled height
+    @media (max-width: $breakpoint-lg - 1) {
+      height: $header-height-mobile-scrolled;
+    }
+
     .header-nav-item {
       color: $white;
     }
@@ -79,6 +99,15 @@
       &:hover {
         background-color: rgba($white, 0.9);
       }
+    }
+  }
+
+  // Ensure mobile menu button is always visible
+  button {
+    @media (max-width: $breakpoint-lg - 1) {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
   }
 }

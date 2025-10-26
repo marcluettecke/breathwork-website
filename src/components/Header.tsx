@@ -61,10 +61,11 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
         <button
           onClick={toggleMobileMenu}
           className={`lg:hidden p-2 ${
-            isScrolled ? "text-primary" : "text-white"
-          }`}
+            isScrolled ? "text-white" : "text-white"
+          } ${isMobileMenuOpen ? "border-2 border-white rounded-md" : ""}`}
           aria-label='Toggle mobile menu'
           aria-expanded={isMobileMenuOpen}
+          style={{ zIndex: 1000 }}
         >
           <svg
             className='w-6 h-6'
@@ -86,21 +87,20 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
 
       {/* Mobile Navigation */}
       <nav
-        className={`lg:hidden fixed inset-x-0 top-0 bg-white shadow-lg transition-transform duration-300 ${
-          isMobileMenuOpen ? "translate-y-24" : "-translate-y-full"
+        className={`lg:hidden fixed inset-0 bg-primary transition-transform duration-300 ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ zIndex: 999 }}
       >
-        <div className='container mx-auto px-4 py-4 pt-28'>
+        <div className='flex flex-col items-center justify-center h-full px-8 pb-20'>
           {navItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               onClick={() => setIsMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `block py-3 text-lg transition-colors duration-200 ${
-                  isActive
-                    ? "text-primary-dark font-medium"
-                    : "text-primary hover:text-primary-dark"
+                `block py-4 text-3xl transition-colors duration-200 text-white ${
+                  isActive ? "font-medium" : ""
                 }`
               }
             >
@@ -110,7 +110,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
           <Link
             to='/kontakt'
             onClick={() => setIsMobileMenuOpen(false)}
-            className='block mt-4 px-5 py-4 bg-primary text-white rounded-button hover:bg-primary-dark transition-colors duration-200 text-center'
+            className='block mt-8 px-8 py-4 bg-white text-black rounded-button hover:bg-opacity-90 transition-all duration-200 text-center text-xl'
           >
             Kontakt
           </Link>
