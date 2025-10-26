@@ -15,22 +15,6 @@
     }
   }
   
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-    
-    @media (max-width: $breakpoint-lg) {
-      grid-template-columns: 1fr;
-      gap: 60px;
-    }
-  }
-  
-  .form-column {
-    max-width: 650px;
-  }
-  
   .section-title {
     font-family: $font-family-urbanist;
     font-size: 42px;
@@ -38,6 +22,43 @@
     color: $primary;
     margin-bottom: 40px;
     letter-spacing: 0.5px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .contact-image-column {
+    // On desktop, image should be on the right (order 2)
+    order: 2;
+
+    @media (max-width: $breakpoint-lg) {
+      // On mobile, image should be first (before form)
+      order: 1;
+    }
+  }
+
+  .form-column {
+    max-width: 650px;
+
+    // On desktop, form should be on the left (order 1)
+    order: 1;
+
+    @media (max-width: $breakpoint-lg) {
+      // On mobile, form should be second (after image)
+      order: 2;
+      max-width: 100%;
+    }
   }
   
   .contact-image-wrapper {

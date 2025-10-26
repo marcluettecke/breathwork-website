@@ -3,7 +3,7 @@
 
 // About Hero Section
 .about-hero {
-  min-height: 600px;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -122,6 +122,10 @@
 .qualifications-section {
   @include section-padding($spacing-xxxl, $spacing-xxxl);
   background-color: $white;
+
+  @media (max-width: $breakpoint-md) {
+    background-color: $primary;
+  }
 }
 
 .qualifications-grid {
@@ -142,24 +146,36 @@
     color: $primary;
     margin-bottom: $spacing-md;
     font-weight: 500;
+
+    @media (max-width: $breakpoint-md) {
+      color: $white;
+    }
   }
-  
+
   .qualification-list {
     list-style: none;
     padding: 0;
-    
+
     li {
       font-size: $font-size-base;
       color: $primary;
       margin-bottom: $spacing-sm;
       padding-left: $spacing-md;
       position: relative;
-      
+
+      @media (max-width: $breakpoint-md) {
+        color: $white;
+      }
+
       &:before {
         content: '•';
         position: absolute;
         left: 0;
         color: $primary;
+
+        @media (max-width: $breakpoint-md) {
+          color: $white;
+        }
       }
     }
   }
@@ -206,9 +222,16 @@
   margin-bottom: $spacing-xl;
   font-weight: 400;
   @include responsive-text($font-size-xxl, 28px);
-  
+
   &.text-center {
     text-align: center;
+  }
+
+  // White color for section title in qualifications section on mobile
+  .qualifications-section & {
+    @media (max-width: $breakpoint-md) {
+      color: $white;
+    }
   }
 }
 

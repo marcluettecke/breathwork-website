@@ -24,10 +24,12 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  
+
   @media (max-width: $breakpoint-md) {
     grid-template-columns: 1fr;
     gap: $spacing-xl;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -35,16 +37,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  // On desktop, image on the right
+  order: 2;
+
+  @media (max-width: $breakpoint-md) {
+    // On mobile, image should be first (above text)
+    order: 1;
+  }
 }
 
 .about-detail-text-column {
+  // On desktop, text on the left
+  order: 1;
+
+  @media (max-width: $breakpoint-md) {
+    // On mobile, text should be second (below image)
+    order: 2;
+  }
+
   .about-detail-text {
     font-size: 1.1rem;
     line-height: 1.7;
     color: #6B8296;
     margin-bottom: 1rem;
     font-weight: 500;
-    
+
     &:last-child {
       margin-bottom: 0;
     }
