@@ -89,16 +89,16 @@ const TestimonialSlider = () => {
   const cardWidthPercent = 100 / cardsToShow
   const gapRem = 2
   const cardWidthCalc = cardsToShow === 1
-    ? `calc(100% - ${gapRem}rem)`
+    ? '100%'
     : `calc(${cardWidthPercent}% - ${(gapRem * (cardsToShow - 1)) / cardsToShow}rem)`
 
   const transformCalc = cardsToShow === 1
-    ? `translateX(calc(-${currentIndex * 100}% - ${currentIndex * gapRem}rem))`
+    ? `translateX(calc(-${currentIndex * 100}% - ${currentIndex * gapRem}rem + 0rem))`
     : `translateX(calc(-${currentIndex * cardWidthPercent}% - ${currentIndex * (gapRem / cardsToShow)}rem))`
 
   return (
     <div className="relative">
-      <div className="testimonial-slider-wrapper overflow-hidden">
+      <div className="testimonial-slider-wrapper overflow-hidden px-4 md:px-0">
         <div
           className="testimonial-slider-track flex transition-transform duration-500 ease-in-out"
           style={{
