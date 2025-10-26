@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { HeadingProps } from '../../models'
 
 const Heading = ({ level, children, className = '' }: HeadingProps) => {
