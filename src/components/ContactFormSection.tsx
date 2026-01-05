@@ -1,5 +1,6 @@
 import ContactForm from './ContactForm'
 import AnimatedSection from './ui/AnimatedSection'
+import therapyImage from '../assets/images/Manuel_during_therapy.jpg'
 import './ContactFormSection.scss'
 
 interface ContactFormSectionProps {
@@ -18,8 +19,8 @@ const ContactFormSection = ({ showImage = true }: ContactFormSectionProps) => {
             <AnimatedSection animation="fade-up" delay={200} className="contact-image-column">
               <div className="contact-image-wrapper">
                 <img
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ddb74dc7-f81f-4a13-b849-401c8a3a046c/20250216_DSC05929.jpg"
-                  alt="Manuela Cosic Yogastunden in Köln und Pulheim"
+                  src={therapyImage}
+                  alt="DurchAtmen Atemtherapie in Köln"
                   className="contact-image"
                 />
               </div>
