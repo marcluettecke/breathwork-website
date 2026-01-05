@@ -4,6 +4,7 @@ import ContactFormSection from '../components/ContactFormSection'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import TestimonialSlider from '../components/TestimonialSlider'
 import AboutSection from '../components/AboutSection'
+import therapyImage from '../assets/images/Manuel_during_therapy.jpg'
 
 const Home = () => {
   return (
@@ -23,7 +24,7 @@ const Home = () => {
             <AnimatedSection animation="fade-up" delay={100}>
               <div className="service-card">
                 <img
-                  src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ffcb12ab-5771-4851-acc6-4ead7b70c14e/Manuela+Cosic+Atemtherapie"
+                  src={therapyImage}
                   alt="Integrative Atemtherapie"
                   className="service-image"
                 />
