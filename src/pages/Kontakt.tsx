@@ -22,10 +22,10 @@ const Kontakt = () => {
 
               <div className="kontakt-description">
                 <p>
-                  Du hast Fragen zu meinen Yoga Kursen oder möchtest dich direkt anmelden?
+                  Du interessierst dich für Atemtherapie oder möchtest einen Termin für eine individuelle Atemsitzung vereinbaren?
                 </p>
                 <p>
-                  Du interessierst dich für Atemtherapie oder möchtest einen Termin für eine individuelle Atemsitzung vereinbaren? Schreib mir gerne - ich freue mich auf deine Nachricht.
+                  Schreib mir gerne - ich freue mich auf deine Nachricht.
                 </p>
               </div>
             </div>

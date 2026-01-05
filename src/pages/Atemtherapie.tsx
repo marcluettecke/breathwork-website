@@ -1,4 +1,5 @@
 import FAQItem from '../components/FAQItem'
+import officeImage from '../assets/images/Office.jpg'
 import '../styles/atemtherapie.scss'
 
 const Atemtherapie = () => {
@@ -7,26 +8,11 @@ const Atemtherapie = () => {
       {/* Hero Section with flower image */}
       <section className="atemtherapie-hero">
         <div className="hero-content">
-          <h1>„Atme tief ein, um deinen Geist nach Hause zu deinem Körper zu bringen."</h1>
-          <p className="author">Thich Nhat Hanh</p>
+          <h1>Was macht eine Atemsitzung aus?</h1>
           <div className="hero-description">
+            <h2>DurchAtmen – Integrative Atemtherapie mit Tiefe</h2>
             <p>
-              Dein Atem zeigt dir den Weg: nutze integrative Atemtherapie für deine 
-              persönliche Entwicklung, mehr Klarheit und Lebendigkeit.
-            </p>
-            <p>
-              Erlebe die heilsame Wirkung bewusster verbundener Atmung 
-              und finde so den Zugang über Körper und Atem zu deinen 
-              unbewussten Gefühls- und Verhaltensmustern.
-            </p>
-            <p>
-              Finde auf diese Weise zurück zu mehr Selbstliebe, 
-              Vertrauen und innerer Stärke.
-            </p>
-            <p>
-              Meine therapeutische Begleitung in persönlichen 1:1 Sitzungen unterstützt 
-              dich dabei, mithilfe des Atems Stress abzubauen, emotionale Blockaden 
-              sanft zu lösen und wieder in Verbindung mit dir selbst zu kommen.
+              In meiner Arbeit mit DurchAtmen verbinde ich den verbundenen Atem mit einem ganzheitlichen Blick auf den Menschen. Verbunden Atmen bedeutet, dass die Atempausen nach der Ein- und Ausatmung ausbleiben und du somit verbunden atmest. Diese Atemtechnik ist grundlegend für die Integrative Atemtherapie und bietet einen tiefen Zugang zu körperlichen, seelischen und geistigen Prozessen – durch das bewusste Erleben des eigenen Atems.
             </p>
           </div>
         </div>
@@ -36,60 +22,47 @@ const Atemtherapie = () => {
       <section className="atemtherapie-content">
         <div className="content-wrapper">
           <div className="text-content">
-            <h2>Integrative Atemtherapie</h2>
-            
+            <h2>Wann DurchAtmen helfen kann</h2>
+
             <p>
-              Der Atem ist eine der wenigen Körperfunktionen, welche sowohl bewusst 
-              gesteuert werden können, als auch unbewusst ablaufen. Dein Atem 
-              spiegelt deinen geistigen und emotionalen Zustand, gleichzeitig kannst du 
-              umgekehrt über bestimmte Atemtechniken bewusst Einfluss auf deinen 
-              inneren Zustand nehmen. Er ist deine unmittelbare Verbindung zu Körper, 
-              Emotionen und Geist und ein wunderbares Werkzeug für den Zugang zu 
-              unterbewussten Empfindungen und Glaubenssätzen.
+              Grundsätzlich ist unsere Art zu atmen ein indirekter Zugang zum autonomen Nervensystem und eröffnet uns somit Möglichkeiten darauf je nach Bedarf einzuwirken. Möchtest du mehr darüber erfahren, welche Veränderung eine verlängerte Einatmung oder Ausatmung, eine tiefe Bauchatmung zu flacher Brustatmung, oder grundsätzlich die Nasenatmung zur Mundatmung bewirkt, besuch mich gerne und ich begleite dich auf deiner Reise.
             </p>
 
             <p>
-              Die integrative Atemtherapie ist eine körperorientierte Therapiemethode 
-              und wird von mir in 1:1 Sitzungen durchgeführt, tragend durch weitere 
-              unterstützende Achtsamkeitstools, finden wir gemeinsam über deinen 
-              Atem und deinen Körper die unterbewussten Muster und Blockaden und 
-              lösen sie dabei Stück für Stück.
-            </p>
-
-            <p>
-              Du kommst wieder mehr in Verbindung zu dir selbst, findest wieder 
-              Leichtigkeit und Lebendigkeit, dein Nervensystem kann sich beruhigen, dein 
-              Körper und dein Geist können sich entspannen.
-            </p>
-
-            <p>
-              Aus eigener Erfahrung weiß ich, dass integrative Atemtherapie dir auch 
-              helfen kann Erlebtes aus der Vergangenheit zu verarbeiten und dich neu 
-              auszurichten.
+              Die Atemarbeit eignet sich besonders bei Beschwerden, die den Körper spürbar einbeziehen – sei es durch Überlastung, Erschöpfung oder durch das Gefühl, den Zugang zum eigenen Empfinden und den Gefühlen verloren zu haben.
             </p>
 
             <div className="themes-section">
               <p className="themes-intro">
-                Alle Themen die dich beschäftigen, können Inhalt einer 
-                integrativen Atemsitzung sein, beispielsweise:
+                Anwendungsbereiche:
               </p>
               <ul>
-                <li>Stress & Anspannung</li>
-                <li>Erschöpfung</li>
-                <li>Überforderung</li>
-                <li>Trauer</li>
-                <li>Ängste und Sorgen</li>
-                <li>Unerwünschte Verhaltens- und Beziehungsmuster</li>
-                <li>Verarbeitung von traumatischen Erlebnissen</li>
-                <li>Psychosomatische Beschwerden</li>
+                <li>Akute Belastungs- und Krisensituationen</li>
+                <li>Anpassungsschwierigkeiten nach tiefgreifenden Lebensveränderungen</li>
+                <li>Körperliche Symptome ohne klare medizinische Ursache (somatoforme Beschwerden)</li>
+                <li>Ängste, innere Unruhe, Erschöpfung oder Burnout</li>
+                <li>kann in sportlich und beruflich herausfordernden Situationen sehr hilfreich sein mehr Ruhe und Konzentration zu finden</li>
+              </ul>
+            </div>
+
+            <div className="themes-section">
+              <p className="themes-intro">
+                Begleitend hilfreich mit anderen therapeutischen Verfahren bei:
+              </p>
+              <ul>
+                <li>Leichten bis mittelschweren Depressionen (als Ergänzung zu anderen therapeutischen Verfahren)</li>
+                <li>Innerer Leere, Antriebslosigkeit, emotionaler Rückzug</li>
+                <li>Schicksalsschlägen, Trennungen, chronischen oder onkologischen Erkrankungen</li>
+                <li>Schlafstörungen</li>
+                <li>Nervosität bei beruflichen Herausforderungen (im Leistungssport, bei Musikern oder Moderatoren)</li>
               </ul>
             </div>
           </div>
 
           <div className="image-content">
-            <img 
-              src="/images/atemtherapie/praxis-interior.jpeg" 
-              alt="Praxis für integrative Atemtherapie"
+            <img
+              src={officeImage}
+              alt="Praxisraum DurchAtmen"
             />
           </div>
         </div>
@@ -133,14 +106,7 @@ Am Ende ist meist eine tiefe Entspannung spürbar, es wird oft eine innere Ruhe 
 
           <FAQItem
             question="Wo findet die Atemsitzung statt?"
-            answer="Termine sind sowohl in Köln als auch in Pulheim buchbar. Nach einer ersten Sitzung vor Ort können weitere Termine auch online erfolgen.
-
-Atemsitzung in Köln– Belgisches Viertel
-Zentrum für Wohlbefinden, Sunny Side Up
-
-Atemsitzung in Pulheim - Stommeln
-Pure Pulheim
-Joseph-Gladbach-Platz 10"
+            answer="Mein Praxisraum steht in der Rolandstr. 61 in der Kölner Südstadt nach terminlicher Vereinbarung offen für dich."
           />
 
           <FAQItem

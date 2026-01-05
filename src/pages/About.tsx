@@ -18,21 +18,17 @@ const About = () => {
         <div className="about-hero-content">
           <AnimatedSection animation="fade-up">
             <h1 className="about-hero-title">
-              Hi ich bin Manu, Yogalehrerin,<br />
-              integrative Atemtherapeutin &<br />
-              Achtsamkeitstrainerin<br />
-              in Köln und Pulheim.
+              Über mich
             </h1>
           </AnimatedSection>
-          
+
           <AnimatedSection animation="fade-up" delay={200}>
             <div className="about-hero-text">
               <p>
-                Meine Leidenschaft ist es, Menschen zu berühren. Dies tue ich mit Händen, Worten, aber auch mit meiner eigenen Präsenz<br />
-                und Aufmerksamkeit.
+                Schon in Jugendjahren war mir klar, dass ich gerne meine berufliche Heimat im sportlichen Bereich finden möchte, um meiner Leidenschaft für Bewegung nachzugehen.
               </p>
               <p>
-                Mein Ziel ist es, meine Schüler und Klienten soweit sicher zu begleiten, dass sie sich selbst wieder ein Stück näher kommen und wieder die Verbindung zu sich selbst bewusst spüren können.
+                Durch den Leistungssport habe ich meinen Körper kennen und spüren gelernt und dadurch viele Erfahrungen sammeln können.
               </p>
             </div>
           </AnimatedSection>

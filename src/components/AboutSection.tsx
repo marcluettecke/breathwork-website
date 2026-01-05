@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import AnimatedSection from './ui/AnimatedSection'
 import CircularPortrait from './CircularPortrait'
+import manuelHeadshot from '../assets/images/Manuel_headshot.jpg'
 
 interface AboutSectionProps {
   showButton?: boolean
@@ -20,8 +21,8 @@ const AboutSection = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="flex justify-center">
               <CircularPortrait
-                src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ae8fefc8-b8c2-4d6e-a3ee-412e9f6e736a/Manuela+Cosic+Yoga+und+Atem"
-                alt="Manuela Cosic"
+                src={manuelHeadshot}
+                alt="Manuel Mechler"
                 size="medium"
               />
             </div>
@@ -30,13 +31,13 @@ const AboutSection = ({
                 Über mich
               </h2>
               <p className="about-text">
-                Ich bin Manuela, Yoga Lehrerin, integrative Atemtherapeutin und Achtsamkeitstrainerin.
+                Schon in Jugendjahren war mir klar, dass ich gerne meine berufliche Heimat im sportlichen Bereich finden möchte, um meiner Leidenschaft für Bewegung nachzugehen. Durch den Leistungssport habe ich meinen Körper kennen und spüren gelernt und dadurch viele Erfahrungen sammeln können.
               </p>
               <p className="about-text">
-                Meine Leidenschaft ist es, Menschen zu berühren. Dies tue ich mit Händen, Worten, aber auch mit meiner eigenen Präsenz und Aufmerksamkeit.
+                Deshalb habe ich an der Sporthochschule Köln das Studium zum Diplomsportwissenschaftler begonnen und auch erfolgreich abgeschlossen und anschließend meinen Abschluss im Fach Biologie absolviert. Seither arbeite ich als Lehrer an einer Berufsschule.
               </p>
               <p className="about-text">
-                Mein Ziel ist es, meine Schüler und Klienten soweit sicher zu begleiten, dass sie sich selbst wieder ein Stück näher kommen und wieder die Verbindung zu sich selbst spüren können.
+                Meine Erfahrungen möchte ich dahingehend gerne weitergeben, um Menschen auf ihrem ganz individuellen Weg zu mehr Verbindung, Wachstum und Liebe zu sich und den Menschen in ihrem Umfeld zu begleiten.
               </p>
               {showButton && (
                 <Link to={buttonLink} className="service-button">

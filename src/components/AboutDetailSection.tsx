@@ -1,5 +1,6 @@
 import AnimatedSection from './ui/AnimatedSection'
 import CircularPortrait from './CircularPortrait'
+import manuelHeadshot from '../assets/images/Manuel_headshot.jpg'
 import './AboutDetailSection.scss'
 
 const AboutDetailSection = () => {
@@ -10,26 +11,26 @@ const AboutDetailSection = () => {
           <div className="about-detail-grid">
             <div className="about-detail-text-column">
               <p className="about-detail-text">
-                So habe ich mich vor über 20 Jahren selbst auf den Weg gemacht. Zunächst habe ich Yoga als "Weg aus dem Kopf - rein in den Körper" entdeckt. Nach einem langen Büroalltag in meinem stressigen Marketingjob war der abendliche Yogakurs mein perfekter Ausgleich – sowohl für den angespannten Körper, als auch für den aufgedrehten Geist. Um diese Erfahrung auch an andere weitergeben zu können, habe ich 2010 die Ausbildung zur Vinyasa Yogalehrerin abgeschlossen und unterrichte seitdem mit viel Herz und Leidenschaft.
+                Der Leistungssport insbesondere ermöglichte mir sehr intensive körperliche Erfahrungen und lange habe ich mich auch über das Gewinnen und Verlieren definiert und mir immer wieder sportlich herausfordernde Ziele gesetzt, um mich durch diese Erfahrungen zu spüren. Dafür war und bin ich sehr dankbar. Dennoch habe ich realisiert, dass ich so nicht weitermachen kann und möchte.
               </p>
-              
+
               <p className="about-detail-text">
-                Nach dem plötzlichen Tod meiner Mutter im Jahr 2019, der darauffolgenden Pandemie, zu Hause mit zwei Kleinkindern, und der gleichzeitigen schweren Erkrankung und dem Verlust meines Vaters in 2021, merkte ich, dass die mir bis dahin zur Verfügung stehenden Tools in dieser Ausnahmesituation nicht ausreichten.
+                Mir wurde nach und nach klar, dass ich nicht nur im Außen nach Wachstum suchen möchte, sondern den Blick nach Innen richten kann, um mehr Verbindung zu mir und meinen Gefühlen zu erlangen.
               </p>
-              
+
               <p className="about-detail-text">
-                Ich entdeckte die integrative Atemtherapie als Möglichkeit, mit Akzeptanz auf meine tiefsten Gefühle zu blicken, diesen sanft und liebevoll zu begegnen und sie dann endlich loszulassen. Diese Erfahrung war für mich so nachhaltig, dass ich mich dazu entschloss den Dingen auf den Grund zu gehen und die 3-jährige Ausbildung zur integrativen Atemtherapeutin und Achtsamkeitstrainerin zu absolvieren.
+                Durch meine damaligen Nachbarn kam ich zur integrativen Atemtherapie nach Judith Hennemann. Glücklicherweise konnte ich dadurch meinen persönlichen Werkzeugkasten in der eigenen Bewusstseinsarbeit erweitern, was mir als Vater eines Sohnes, als Freund und Partner aber auch auf beruflicher Ebene sehr geholfen hat, nicht nur meine Perspektive zu sehen, sondern auch die meiner Mitmenschen zu erkennen und dadurch das eigene Handeln auszurichten.
               </p>
-              
+
               <p className="about-detail-text">
-                Seitdem begleite ich Menschen dabei, sich selbst auf allen Ebenen wieder bewusst zu begegnen – sei es physisch, mental oder emotional. Nach meiner Arbeit in entspannte und lächelnde Gesichter zu blicken ist dabei das größte Geschenk für mich!
+                Meine Erfahrungen möchte ich dahingehend gerne weitergeben, um Menschen auf ihrem ganz individuellen Weg zu mehr Verbindung, Wachstum und Liebe zu sich und den Menschen in ihrem Umfeld zu begleiten.
               </p>
             </div>
             
             <div className="about-detail-image-column">
               <CircularPortrait
-                src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/ae8fefc8-b8c2-4d6e-a3ee-412e9f6e736a/Manuela+Cosic+Yoga+und+Atem"
-                alt="Manuela Cosic"
+                src={manuelHeadshot}
+                alt="Manuel Mechler"
                 size="large"
               />
             </div>
