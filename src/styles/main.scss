@@ -66,6 +66,10 @@
   &-section {
     background-color: $secondary;
     @include section-padding;
+
+    .section-title {
+      margin-bottom: $spacing-sm;
+    }
   }
 
   &-container {
