@@ -106,14 +106,14 @@ Am Ende ist meist eine tiefe Entspannung spürbar, es wird oft eine innere Ruhe 
 
           <FAQItem
             question="Wo findet die Atemsitzung statt?"
-            answer="Mein Praxisraum steht in der Rolandstr. 61 in der Kölner Südstadt nach terminlicher Vereinbarung offen für dich."
+            answer="Mein Praxisraum steht in der Rolandstr. 61, 50677 Köln nach terminlicher Vereinbarung offen für dich."
           />
 
           <FAQItem
             question="Was kostet eine Atemsitzung?"
             answer="In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.
 
-60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 120,00 €.
+60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 100,00 €.
 
 Terminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung."
           />

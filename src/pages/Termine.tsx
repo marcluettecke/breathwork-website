@@ -134,7 +134,7 @@ const Termine = () => {
     },
     {
       question: "Was kostet eine Atemsitzung?",
-      answer: "In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.\n\n60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 120,00 €.\n\nTerminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung."
+      answer: "In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.\n\n60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 100,00 €.\n\nTerminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung."
     }
   ]
 
@@ -152,9 +152,10 @@ const Termine = () => {
           <h1>Termine</h1>
         </div>
 
-        {/* Trial Info */}
+        {/* Availability Info */}
         <div className="trial-info">
-          <p>Eine Probestunde ist jederzeit möglich, sprich mich einfach an!</p>
+          <p>Nach Vereinbarung</p>
+          <p>Kostenlose Erstgespräche telefonisch jederzeit vereinbar</p>
         </div>
 
         {/* Schedule Cards */}
