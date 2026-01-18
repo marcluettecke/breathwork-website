@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import ContactFormSection from '../components/ContactFormSection'
 import AnimatedSection from '../components/ui/AnimatedSection'
-import TestimonialSlider from '../components/TestimonialSlider'
+// import TestimonialSlider from '../components/TestimonialSlider' // Commented out - not needed until testimonials are available
 import AboutSection from '../components/AboutSection'
 import therapyImage from '../assets/images/Manuel_during_therapy.jpg'
 
