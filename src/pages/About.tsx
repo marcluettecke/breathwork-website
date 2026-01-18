@@ -1,15 +1,16 @@
 import AnimatedSection from '../components/ui/AnimatedSection'
 import AboutDetailSection from '../components/AboutDetailSection'
+import fallForest from '../assets/images/fall_forest.jpg'
 import './About.scss'
 
 const About = () => {
   return (
     <>
       {/* Hero Section with Background Image */}
-      <section 
+      <section
         className="about-hero"
         style={{
-          backgroundImage: 'url("https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/4c46a8f2-911d-4dcc-8c1a-f7e8c1c7d08b/yellow-blooming-flowering-plant.jpg")',
+          backgroundImage: `url(${fallForest})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

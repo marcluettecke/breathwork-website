@@ -18,7 +18,7 @@ const Button = ({
     primary: 'bg-primary text-white hover:bg-primary-dark',
     secondary: 'bg-primary-light text-white hover:bg-primary',
     white: 'bg-white text-black hover:bg-gray-100',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+    outline: 'border-2 border-primary text-text-dark hover:bg-primary hover:text-white',
   }
   
   const sizeClasses = {

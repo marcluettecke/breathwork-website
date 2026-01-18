@@ -42,15 +42,7 @@ const Home = () => {
       </section>
 
       {/* Quote Section */}
-      <section 
-        className="quote-section"
-        style={{
-          backgroundImage: 'url("https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/fef3decc-78d8-497e-b0e5-ecbc5897cae4/DSC_0117.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="absolute inset-0 bg-primary/90" />
+      <section className="quote-section">
         <div className="quote-content relative z-10">
           <div className="quote-grid">
             <AnimatedSection animation="fade-in" delay={100}>

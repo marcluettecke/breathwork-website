@@ -7,9 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#547183',
-        'primary-dark': '#405566',
-        'primary-light': '#7A93A4',
+        'primary': '#2F4538',
+        'primary-dark': '#243529',
+        'secondary': '#D8E0D3',
+        'accent-light': '#E8EDE6',
+        'text-dark': '#2F4538',
       },
       fontFamily: {
         'urbanist': ['Urbanist', 'sans-serif'],

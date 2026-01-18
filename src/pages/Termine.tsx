@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import FAQItem from '../components/FAQItem'
 import ContactFormSection from '../components/ContactFormSection'
+import officeStock from '../assets/images/office_stock.jpg'
 import '../styles/termine.scss'
 
 interface ScheduleCardProps {
@@ -66,6 +67,7 @@ const ScheduleCard = ({ title, time, location, nextCourse, image, expandedConten
 }
 
 const Termine = () => {
+  /* COMMENTED OUT - Schedule cards from Manuela's website (not needed for Manuel's appointment-based practice)
   const scheduleData: ScheduleCardProps[] = [
     {
       title: "Montags",
@@ -110,6 +112,7 @@ const Termine = () => {
       }
     }
   ]
+  */
 
   const faqData = [
     {
@@ -141,7 +144,12 @@ const Termine = () => {
   return (
     <div className="termine-page">
       {/* Hero Section with Background Image */}
-      <section className="termine-hero">
+      <section
+        className="termine-hero"
+        style={{
+          backgroundImage: `url(${officeStock})`
+        }}
+      >
         <div className="hero-overlay"></div>
       </section>
 
@@ -158,12 +166,13 @@ const Termine = () => {
           <p>Kostenlose Erstgespräche telefonisch jederzeit vereinbar</p>
         </div>
 
-        {/* Schedule Cards */}
+        {/* COMMENTED OUT - Schedule Cards from Manuela's website (not needed for Manuel)
         <div className="schedule-container">
           {scheduleData.map((schedule, index) => (
             <ScheduleCard key={index} {...schedule} />
           ))}
         </div>
+        */}
       </section>
 
       {/* FAQ Section with blue background */}

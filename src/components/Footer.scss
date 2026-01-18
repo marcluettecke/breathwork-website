@@ -2,7 +2,7 @@
 @use '../styles/mixins' as *;
 
 .footer {
-  background-color: #6B8296;
+  background-color: $primary;
   color: $white;
   padding: 80px 0 40px;
   margin-top: 0;
@@ -13,8 +13,8 @@
 
   &-grid {
     display: grid;
-    grid-template-columns: 2fr 1.5fr 1.5fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
     margin-bottom: 60px;
     align-items: start;
 
@@ -22,17 +22,6 @@
       grid-template-columns: 1fr;
       gap: $spacing-xl;
     }
-  }
-
-  &-logo-column {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  &-logo {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
   }
 
   &-middle-column {

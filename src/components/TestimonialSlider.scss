@@ -40,7 +40,7 @@
   &-text {
     font-size: 16px !important;
     line-height: 24px !important;
-    color: $primary;
+    color: $text-dark;
     margin-bottom: $spacing-md;
     font-style: italic;
   }
@@ -48,7 +48,7 @@
   &-author {
     font-size: 14px !important;
     line-height: 21px !important;
-    color: $primary;
+    color: $text-dark;
     font-weight: 400;
   }
 }

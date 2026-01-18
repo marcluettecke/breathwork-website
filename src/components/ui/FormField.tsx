@@ -19,7 +19,7 @@ const FormField = ({ label, error, as = 'input', className = '', ...props }: For
   
   return (
     <div className={className}>
-      <label className="block text-primary mb-2">
+      <label className="block text-text-dark mb-2">
         {label}
         {props.required && <span className="text-red-500 ml-1">*</span>}
       </label>

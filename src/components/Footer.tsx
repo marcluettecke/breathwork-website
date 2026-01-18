@@ -6,16 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-grid">
-          {/* Logo Column */}
-          <div className="footer-column footer-logo-column">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/715cb0b7-5569-4f51-8f1a-2824765c9c35/Kein+Titel+%28150+x+40+cm%29+%281%29.png"
-              alt="DurchAtmen Logo"
-              className="footer-logo"
-            />
-          </div>
-
-          {/* Middle Column - Info & Badge */}
+          {/* Left Column - Info & Badge */}
           <div className="footer-column footer-middle-column">
             <div className="footer-info">
               <p className="footer-text"><strong>Manuel Mechler</strong></p>

@@ -1,12 +1,18 @@
 import FAQItem from '../components/FAQItem'
 import officeImage from '../assets/images/Office.jpg'
+import mountainLandscape from '../assets/images/mountain_landscape.jpg'
 import '../styles/atemtherapie.scss'
 
 const Atemtherapie = () => {
   return (
     <>
-      {/* Hero Section with flower image */}
-      <section className="atemtherapie-hero">
+      {/* Hero Section with mountain landscape */}
+      <section
+        className="atemtherapie-hero"
+        style={{
+          backgroundImage: `url(${mountainLandscape})`
+        }}
+      >
         <div className="hero-content">
           <h1>Was macht eine Atemsitzung aus?</h1>
           <div className="hero-description">

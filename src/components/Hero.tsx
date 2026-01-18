@@ -1,12 +1,12 @@
 import "./Hero.scss";
+import heroBg from '../assets/images/green_plant.jpg';
 
 const Hero = () => {
   return (
     <section
       className='hero-section'
       style={{
-        backgroundImage:
-          'url("https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/b90e6722-7855-4ce2-b64f-2fccc4a9218f/beautiful-view-morning-light.jpg")',
+        backgroundImage: `url(${heroBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

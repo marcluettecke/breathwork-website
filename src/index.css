@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply text-primary antialiased;
+    @apply text-text-dark antialiased;
     overflow-x: hidden;
     width: 100%;
     font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

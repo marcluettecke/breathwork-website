@@ -1,4 +1,5 @@
 import ContactForm from '../components/ContactForm'
+import fieldImage from '../assets/images/field.jpg'
 import './Kontakt.scss'
 
 const Kontakt = () => {
@@ -8,7 +9,7 @@ const Kontakt = () => {
       <section
         className="kontakt-hero"
         style={{
-          backgroundImage: 'url("https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/9f2fca9d-fb66-4fde-a5d9-8a2e23102f2b/20250216_DSC05567.jpg")',
+          backgroundImage: `url(${fieldImage})`,
         }}
       />
 
