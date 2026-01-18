@@ -1,9 +1,10 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import FAQItem from '../components/FAQItem'
 import ContactFormSection from '../components/ContactFormSection'
 import officeStock from '../assets/images/office_stock.jpg'
 import '../styles/termine.scss'
 
+/* COMMENTED OUT - Schedule Card component (not needed for appointment-based practice)
 interface ScheduleCardProps {
   title: string
   time: string
@@ -31,8 +32,8 @@ const ScheduleCard = ({ title, time, location, nextCourse, image, expandedConten
         <p className="location">{location}</p>
         <p className="next-course">{nextCourse ? `Nächster Kursstart: ${nextCourse}` : '\u00A0'}</p>
       </div>
-      
-      <button 
+
+      <button
         className="info-button"
         onClick={() => setIsExpanded(!isExpanded)}
         aria-expanded={isExpanded}
@@ -65,6 +66,7 @@ const ScheduleCard = ({ title, time, location, nextCourse, image, expandedConten
     </div>
   )
 }
+*/
 
 const Termine = () => {
   /* COMMENTED OUT - Schedule cards from Manuela's website (not needed for Manuel's appointment-based practice)
