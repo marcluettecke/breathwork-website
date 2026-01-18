@@ -28,6 +28,7 @@ const Hero = () => {
             </p>
           </div>
 
+          {/* COMMENTED OUT - Manuela's signature (removed for Manuel's site)
           <div className='hero-signature'>
             <img
               src='https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/7709eb0b-664a-440b-8822-36dc5b69fd65/Kein+Titel+%28150+x+40+cm%29.png'
@@ -35,6 +36,7 @@ const Hero = () => {
               className='hero-logo'
             />
           </div>
+          */}
         </div>
       </div>
     </section>

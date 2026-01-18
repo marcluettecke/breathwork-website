@@ -164,15 +164,9 @@
   }
 
   &-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    align-items: start;
-
-    @media (max-width: $breakpoint-md) {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-logo-wrapper {
@@ -185,6 +179,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    max-width: 800px;
   }
 
   &-text {

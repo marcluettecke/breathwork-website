@@ -45,6 +45,7 @@ const Home = () => {
       <section className="quote-section">
         <div className="quote-content relative z-10">
           <div className="quote-grid">
+            {/* COMMENTED OUT - Manuela's logo (removed for Manuel's site)
             <AnimatedSection animation="fade-in" delay={100}>
               <div className="quote-logo-wrapper">
                 <img
@@ -54,6 +55,7 @@ const Home = () => {
                 />
               </div>
             </AnimatedSection>
+            */}
             <AnimatedSection animation="fade-in">
               <div className="quote-text-wrapper">
                 <h3 className="quote-text font-urbanist">
@@ -70,7 +72,7 @@ const Home = () => {
       {/* About Section */}
       <AboutSection />
 
-      {/* Testimonials Section */}
+      {/* COMMENTED OUT - Testimonials Section (no testimonials available yet)
       <section className="testimonials-section">
         <div className="service-container">
           <AnimatedSection animation="fade-up">
@@ -78,10 +80,11 @@ const Home = () => {
               Das sagen andere über meine Arbeit
             </h2>
           </AnimatedSection>
-          
+
           <TestimonialSlider />
         </div>
       </section>
+      */}
 
       {/* Contact Form Section */}
       <ContactFormSection />

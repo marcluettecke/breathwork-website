@@ -5,6 +5,7 @@ import "./Header.scss";
 import Logo from "./Logo";
 
 const navItems: NavItem[] = [
+  { label: "Home", path: "/" },
   { label: "Atemtherapie", path: "/atemtherapie" },
   { label: "Über mich", path: "/about" },
   { label: "Termine", path: "/termine" },
