@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import ContactFormSection from '../components/ContactFormSection'
 import AnimatedSection from '../components/ui/AnimatedSection'
-// import TestimonialSlider from '../components/TestimonialSlider' // Commented out - not needed until testimonials are available
+import TestimonialSlider from '../components/TestimonialSlider'
 import AboutSection from '../components/AboutSection'
 import therapyImage from '../assets/images/Manuel_during_therapy.jpg'
 
@@ -72,7 +72,7 @@ const Home = () => {
       {/* About Section */}
       <AboutSection />
 
-      {/* COMMENTED OUT - Testimonials Section (no testimonials available yet)
+      {/* Testimonials Section */}
       <section className="testimonials-section">
         <div className="service-container">
           <AnimatedSection animation="fade-up">
@@ -84,7 +84,6 @@ const Home = () => {
           <TestimonialSlider />
         </div>
       </section>
-      */}
 
       {/* Contact Form Section */}
       <ContactFormSection />

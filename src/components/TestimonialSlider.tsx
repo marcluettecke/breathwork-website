@@ -1,49 +1,44 @@
 import { useState, useEffect } from 'react'
 import { Testimonial } from '../models'
 import './TestimonialSlider.scss'
+import manuelaHeadshot from '../assets/images/manuela_headshot.jpeg'
+import judithHeadshot from '../assets/images/judith_headshot.png'
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    text: "Sie ist einfühlsam, klar und lässt den Raum den es braucht seine tiefsten Emotionen in Sicherheit und Verbundenheit anzuschauen und zu integrieren",
-    author: "Manuel",
-    role: "Atemklient",
-    image: "https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/d1632acc-fd45-460c-a971-22648ddbe9b8/WhatsApp+Image+2025-04-26+at+20.29.53.jpeg"
+    text: "Manuel vermittelt in seinen Atemsitzungen viel Sicherheit und Klarheit. Er begleitet sanft und absolut wertfrei alle aufkommenden Gefühle und Zustände. Ich habe mich bei ihm jederzeit gut aufgehoben gefühlt.",
+    author: "Manuela",
+    role: "Atemtherapeutin und Klientin",
+    image: manuelaHeadshot
   },
   {
     id: 2,
-    text: "Ich bin seit 2011 Manus Yogaschülerin. Unser Yoga-Kurs gibt mir körperliche Kraft und seelische Stärke und das bedeutet für mich eine starke Verbesserung meiner Lebensqualität.",
-    author: "Catrin",
-    role: "Yogaschülerin",
-    image: "https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/6a760c2d-acbb-449a-a0b6-5d8542413746/PHOTO-2025-05-22-11-15-54.jpg"
+    text: "Präsent, klar und herzlich - Manuel gibt bewegende Atemsitzungen, die zu mehr innerer Ruhe und Klarheit führen.",
+    author: "Judith",
+    role: "Atemtherapeutenausbilderin",
+    image: judithHeadshot
   },
   {
     id: 3,
-    text: "Die gemeinsame Zeit mit dir war für mich sehr wertvoll. In den Yogastunden, den Atemsitzungen und auch in der 1:1-Arbeit mit The Work habe ich mich immer gut gehalten und gesehen gefühlt.",
-    author: "Anh",
-    role: "Yogaschülerin & Klientin",
-    image: "https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/67b49b38-bd79-424b-8a09-ca6758afedde/PHOTO-2025-05-17-10-54-30.jpg"
+    text: "Manuel vermittelt in seinen Atemsitzungen viel Sicherheit und Klarheit. Er begleitet sanft und absolut wertfrei alle aufkommenden Gefühle und Zustände. Ich habe mich bei ihm jederzeit gut aufgehoben gefühlt.",
+    author: "Manuela",
+    role: "Atemtherapeutin und Klientin",
+    image: manuelaHeadshot
   },
   {
     id: 4,
-    text: "Die gemeinsame Zeit mit dir war für mich sehr wertvoll. In den Yogastunden, den Atemsitzungen und auch in der 1:1-Arbeit mit The Work habe ich mich immer gut gehalten und gesehen gefühlt.",
-    author: "Anh",
-    role: "Yogaschülerin & Klientin",
-    image: "https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/67b49b38-bd79-424b-8a09-ca6758afedde/PHOTO-2025-05-17-10-54-30.jpg"
+    text: "Präsent, klar und herzlich - Manuel gibt bewegende Atemsitzungen, die zu mehr innerer Ruhe und Klarheit führen.",
+    author: "Judith",
+    role: "Atemtherapeutenausbilderin",
+    image: judithHeadshot
   },
   {
     id: 5,
-    text: "Sie ist einfühlsam, klar und lässt den Raum den es braucht seine tiefsten Emotionen in Sicherheit und Verbundenheit anzuschauen und zu integrieren",
-    author: "Manuel",
-    role: "Atemklient",
-    image: "https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/d1632acc-fd45-460c-a971-22648ddbe9b8/WhatsApp+Image+2025-04-26+at+20.29.53.jpeg"
-  },
-  {
-    id: 6,
-    text: "Ich bin seit 2011 Manus Yogaschülerin. Unser Yoga-Kurs gibt mir körperliche Kraft und seelische Stärke und das bedeutet für mich eine starke Verbesserung meiner Lebensqualität.",
-    author: "Catrin",
-    role: "Yogaschülerin",
-    image: "https://images.squarespace-cdn.com/content/v1/67efaaf358ce827f9ba17b5f/6a760c2d-acbb-449a-a0b6-5d8542413746/PHOTO-2025-05-22-11-15-54.jpg"
+    text: "Manuel vermittelt in seinen Atemsitzungen viel Sicherheit und Klarheit. Er begleitet sanft und absolut wertfrei alle aufkommenden Gefühle und Zustände. Ich habe mich bei ihm jederzeit gut aufgehoben gefühlt.",
+    author: "Manuela",
+    role: "Atemtherapeutin und Klientin",
+    image: manuelaHeadshot
   }
 ]
 
