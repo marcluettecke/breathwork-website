@@ -1,8 +1,8 @@
 // import { useState } from 'react'
-import FAQItem from '../components/FAQItem'
-import ContactFormSection from '../components/ContactFormSection'
-import officeStock from '../assets/images/office_stock.jpg'
-import '../styles/termine.scss'
+import forest from "../assets/images/forest.jpg";
+import ContactFormSection from "../components/ContactFormSection";
+import FAQItem from "../components/FAQItem";
+import "../styles/termine.scss";
 
 /* COMMENTED OUT - Schedule Card component (not needed for appointment-based practice)
 interface ScheduleCardProps {
@@ -119,51 +119,55 @@ const Termine = () => {
   const faqData = [
     {
       question: "Was ist integrative Atemtherapie?",
-      answer: "Integrative Atemtherapie ist eine ganzheitliche und körperorientierte Therapiemethode, welche den bewussten Atem als Zugang zu körperlichen, emotionalen und mentalen Prozessen nutzt.\n\nZiel ist es, festgefahrene Emotionen, alte Lebenserfahrungen oder Trauma zu erkennen, zu lösen und zu verarbeiten sowie das allgemeine Wohlbefinden und die Selbstregulation zu stärken.\n\nIntegrative Atemtherapie richtet sich an alle, die entweder gezielt an inneren Themen arbeiten möchten oder sich persönliches Wachstum und mehr Lebensqualität wünschen."
+      answer:
+        "Integrative Atemtherapie ist eine ganzheitliche und körperorientierte Therapiemethode, welche den bewussten Atem als Zugang zu körperlichen, emotionalen und mentalen Prozessen nutzt.\n\nZiel ist es, festgefahrene Emotionen, alte Lebenserfahrungen oder Trauma zu erkennen, zu lösen und zu verarbeiten sowie das allgemeine Wohlbefinden und die Selbstregulation zu stärken.\n\nIntegrative Atemtherapie richtet sich an alle, die entweder gezielt an inneren Themen arbeiten möchten oder sich persönliches Wachstum und mehr Lebensqualität wünschen.",
     },
     {
       question: "Wie läuft eine Atemsitzung ab?",
-      answer: "Eine Atemsitzung findet immer 1:1 in einem persönlichen Setting statt. Jede Sitzung ist dabei sehr individuell und wird von mir achtsam und wertfrei begleitet.\n\nBei \"Atemanfängern\" führe ich eine sanfte Heranführung an den (verbundenen) Atem durch und wir schaffen zunächst gemeinsam einen sicheren Raum für dein Anliegen.\n\nSpätere Sitzungen laufen wie folgt ab:\nNach Klärung deines Anliegens leite ich dich durch Körper- und Atemübungen gezielt in einen entspannten Zustand.\nIm Anschluss folgt der kontinuierliche verbundene Atem. Hier zeigen sich oft emotionale oder körperliche Blockaden, welche wir gemeinsam sanft anschauen, annehmen und integrieren.\nAm Ende ist meist eine tiefe Entspannung spürbar, es wird oft eine innere Ruhe und Klarheit empfunden."
+      answer:
+        'Eine Atemsitzung findet immer 1:1 in einem persönlichen Setting statt. Jede Sitzung ist dabei sehr individuell und wird von mir achtsam und wertfrei begleitet.\n\nBei "Atemanfängern" führe ich eine sanfte Heranführung an den (verbundenen) Atem durch und wir schaffen zunächst gemeinsam einen sicheren Raum für dein Anliegen.\n\nSpätere Sitzungen laufen wie folgt ab:\nNach Klärung deines Anliegens leite ich dich durch Körper- und Atemübungen gezielt in einen entspannten Zustand.\nIm Anschluss folgt der kontinuierliche verbundene Atem. Hier zeigen sich oft emotionale oder körperliche Blockaden, welche wir gemeinsam sanft anschauen, annehmen und integrieren.\nAm Ende ist meist eine tiefe Entspannung spürbar, es wird oft eine innere Ruhe und Klarheit empfunden.',
     },
     {
       question: "Wie lange dauert eine Atemsitzung?",
-      answer: "Eine Atemsitzung dauert gewöhnlich 60-90 Minuten."
+      answer: "Eine Atemsitzung dauert gewöhnlich 60-90 Minuten.",
     },
     {
       question: "Wann finden die Termine statt?",
-      answer: "Termine finden individuell nach Vereinbarung statt."
+      answer: "Termine finden individuell nach Vereinbarung statt.",
     },
     {
       question: "Wo findet die Atemsitzung statt?",
-      answer: "Termine sind sowohl in Köln als auch in Pulheim buchbar.\n\nNach einer ersten Sitzung vor Ort, können weitere Termine auch online erfolgen.\n\nAtemsitzung in Köln – Belgisches Viertel\nZentrum für Wohlbefinden, Sunny Side Up\n\nAtemsitzung in Pulheim - Stommeln\nPure Pulheim\nJoseph-Gladbach-Platz 10"
+      answer:
+        "Termine sind sowohl in Köln als auch in Pulheim buchbar.\n\nNach einer ersten Sitzung vor Ort, können weitere Termine auch online erfolgen.\n\nAtemsitzung in Köln – Belgisches Viertel\nZentrum für Wohlbefinden, Sunny Side Up\n\nAtemsitzung in Pulheim - Stommeln\nPure Pulheim\nJoseph-Gladbach-Platz 10",
     },
     {
       question: "Was kostet eine Atemsitzung?",
-      answer: "In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.\n\n60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 100,00 €.\n\nTerminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung."
-    }
-  ]
+      answer:
+        "In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.\n\n60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 100,00 €.\n\nTerminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung.",
+    },
+  ];
 
   return (
-    <div className="termine-page">
+    <div className='termine-page'>
       {/* Hero Section with Background Image */}
       <section
-        className="termine-hero"
+        className='termine-hero'
         style={{
-          backgroundImage: `url(${officeStock})`
+          backgroundImage: `url(${forest})`,
         }}
       >
-        <div className="hero-overlay"></div>
+        <div className='hero-overlay'></div>
       </section>
 
       {/* Main Content Section */}
-      <section className="termine-content">
+      <section className='termine-content'>
         {/* Title Section */}
-        <div className="termine-header">
+        <div className='termine-header'>
           <h1>Termine</h1>
         </div>
 
         {/* Availability Info */}
-        <div className="trial-info">
+        <div className='trial-info'>
           <p>Nach Vereinbarung</p>
           <p>Kostenlose Erstgespräche telefonisch jederzeit vereinbar</p>
         </div>
@@ -178,10 +182,10 @@ const Termine = () => {
       </section>
 
       {/* FAQ Section with blue background */}
-      <section className="termine-faq">
-        <div className="faq-container">
+      <section className='termine-faq'>
+        <div className='faq-container'>
           <h2>Integrative Atemtherapie</h2>
-          <div className="faq-list">
+          <div className='faq-list'>
             {faqData.map((faq, index) => (
               <FAQItem key={index} {...faq} />
             ))}
@@ -192,7 +196,7 @@ const Termine = () => {
       {/* Contact Form Section */}
       <ContactFormSection />
     </div>
-  )
-}
+  );
+};
 
-export default Termine
+export default Termine;

@@ -4,7 +4,7 @@ import ContactFormSection from '../components/ContactFormSection'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import TestimonialSlider from '../components/TestimonialSlider'
 import AboutSection from '../components/AboutSection'
-import therapyImage from '../assets/images/Manuel_during_therapy.jpg'
+import therapyImage from '../assets/images/Manuel_solo.jpeg'
 
 const Home = () => {
   return (

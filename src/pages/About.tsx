@@ -49,24 +49,13 @@ const About = () => {
           <div className="qualifications-grid">
             <AnimatedSection animation="fade-up" delay={100}>
               <div className="qualification-column">
-                <h3 className="qualification-title">Ausbildungen</h3>
                 <ul className="qualification-list">
-                  <li>200h Vinyasa Yoga Teacher Training</li>
-                  <li>Integrative Atemtherapie Ausbildung</li>
-                  <li>Fortbildung in Traumasensitivem Yoga</li>
-                  <li>Weiterbildung in Yin Yoga</li>
-                </ul>
-              </div>
-            </AnimatedSection>
-            
-            <AnimatedSection animation="fade-up" delay={200}>
-              <div className="qualification-column">
-                <h3 className="qualification-title">Erfahrung</h3>
-                <ul className="qualification-list">
-                  <li>Über 5 Jahre Unterrichtserfahrung</li>
-                  <li>Regelmäßige Workshops und Retreats</li>
-                  <li>Einzelbegleitung in Atemtherapie</li>
-                  <li>Kontinuierliche Weiterbildung</li>
+                  <li>Integrativer Atemtherapie</li>
+                  <li>Embodiment und Körpertherapie</li>
+                  <li>Innere Kindarbeit</li>
+                  <li>Voice Dialog</li>
+                  <li>The Work</li>
+                  <li>Meditation und Achtsamkeit</li>
                 </ul>
               </div>
             </AnimatedSection>
