@@ -9,10 +9,6 @@
 .contact-form {
   .form-row {
     margin-bottom: 24px;
-    
-    &.newsletter-row {
-      margin-top: 32px;
-    }
   }
   
   .form-label {
@@ -67,41 +63,6 @@
     resize: vertical;
     min-height: 140px;
     line-height: 1.5;
-  }
-  
-  .newsletter-text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #666;
-    margin: 8px 0 16px;
-  }
-  
-  .button-group {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .option-button {
-    padding: 5px 15px;
-    background-color: rgba($white, 0.8);
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font-size: 14.4px;
-    color: $text-dark;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-
-    &:hover {
-      border-color: $primary;
-    }
-
-    &.active {
-      background-color: $primary;
-      color: $white;
-      border-color: $primary;
-    }
   }
 
   .submit-button {

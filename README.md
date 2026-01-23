@@ -1,13 +1,13 @@
-# Manuela Cosic - Yoga & Atemtherapie Website
+# DurchAtmen - Atemtherapie Website
 
-A modern, responsive website for Manuela Cosic's Yoga and Breathwork therapy practice in Cologne and Pulheim, Germany.
+A modern, responsive website for Manuel Mechler's breathwork therapy practice in Cologne, Germany.
 
 ## 🌟 Features
 
 - **Responsive Design**: Fully responsive layout that works on all devices
 - **Modern Stack**: Built with React, TypeScript, and Vite for optimal performance
 - **Smooth Animations**: Scroll-triggered animations for enhanced user experience
-- **Contact Form**: Functional contact form with newsletter subscription
+- **Contact Form**: Functional contact form for appointment inquiries
 - **Multi-page Navigation**: Clean routing with React Router v6
 - **SCSS Styling**: Organized styles with SCSS for maintainability
 
@@ -120,4 +120,4 @@ This is a private project. Please contact the owner for contribution guidelines.
 
 ---
 
-Developed with ❤️ for Manuela Cosic
+Developed with ❤️ for Manuel Mechler - DurchAtmen

@@ -7,7 +7,6 @@ interface ContactFormData {
   email: string
   subject: string
   message: string
-  newsletter: 'yes' | 'no' | ''
 }
 
 const ContactForm = () => {
@@ -16,8 +15,7 @@ const ContactForm = () => {
     lastName: '',
     email: '',
     subject: '',
-    message: '',
-    newsletter: ''
+    message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -30,26 +28,26 @@ const ContactForm = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     try {
       await new Promise(resolve => setTimeout(resolve, 1000))
-      
+
       console.log('Form submitted:', {
         ...formData,
         timestamp: new Date().toISOString(),
-        to: 'marc.luettecke1@gmail.com'
+        to: 'manuelmechler@gmail.com'
       })
-      
+
       const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]')
       submissions.push({
         ...formData,
         timestamp: new Date().toISOString()
       })
       localStorage.setItem('contactSubmissions', JSON.stringify(submissions))
-      
+
       setSubmitStatus('success')
-      setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '', newsletter: '' })
-      
+      setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' })
+
       setTimeout(() => setSubmitStatus('idle'), 5000)
     } catch (error) {
       console.error('Error submitting form:', error)
@@ -87,7 +85,7 @@ const ContactForm = () => {
             />
           </div>
         </div>
-        
+
         <div className="form-row">
           <label className="form-label">
             E-Mail-Adresse <span className="required">(erforderlich)</span>
@@ -101,7 +99,7 @@ const ContactForm = () => {
             required
           />
         </div>
-        
+
         <div className="form-row">
           <label className="form-label">
             Betreff <span className="required">(erforderlich)</span>
@@ -115,7 +113,7 @@ const ContactForm = () => {
             required
           />
         </div>
-        
+
         <div className="form-row">
           <label className="form-label">
             Deine Nachricht an mich <span className="required">(erforderlich)</span>
@@ -129,46 +127,21 @@ const ContactForm = () => {
             required
           />
         </div>
-        
-        <div className="form-row newsletter-row">
-          <label className="form-label">
-            Newsletter <span className="required">(erforderlich)</span>
-          </label>
-          <p className="newsletter-text">
-            Melde dich für meinen Newsletter an und erfahre viermal im Jahr von neuen Kursen, Aktionen und besonderen Angeboten.
-          </p>
-          <div className="button-group">
-            <button
-              type="button"
-              className={`option-button ${formData.newsletter === 'yes' ? 'active' : ''}`}
-              onClick={() => setFormData(prev => ({ ...prev, newsletter: 'yes' }))}
-            >
-              Anmelden
-            </button>
-            <button
-              type="button"
-              className={`option-button ${formData.newsletter === 'no' ? 'active' : ''}`}
-              onClick={() => setFormData(prev => ({ ...prev, newsletter: 'no' }))}
-            >
-              Nein, Danke
-            </button>
-          </div>
-        </div>
-        
-        <button 
-          type="submit" 
+
+        <button
+          type="submit"
           className="submit-button"
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Wird gesendet...' : 'Senden'}
         </button>
-        
+
         {submitStatus === 'success' && (
           <div className="success-message">
             Vielen Dank für deine Nachricht! Ich melde mich so schnell wie möglich bei dir.
           </div>
         )}
-        
+
         {submitStatus === 'error' && (
           <div className="error-message">
             Es gab einen Fehler beim Senden. Bitte versuche es später erneut.
