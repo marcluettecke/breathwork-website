@@ -20,7 +20,7 @@ const Impressum = () => {
           <h2>Kontakt</h2>
           <p>
             Telefon: 0221-25919697<br />
-            E-Mail: manuelmechler@gmail.com
+            E-Mail: manuelmechler@durchatmen.life
           </p>
         </section>
 

@@ -112,7 +112,7 @@ const Datenschutz = () => {
             Rolandstr. 61<br />
             50677 Köln<br />
             Telefon: 0221-25919697<br />
-            E-Mail: manuelmechler@gmail.com
+            E-Mail: manuelmechler@durchatmen.life
           </p>
           <p>
             Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen

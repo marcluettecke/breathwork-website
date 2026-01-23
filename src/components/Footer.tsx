@@ -30,7 +30,7 @@ const Footer = () => {
               <p className="footer-text">Rolandstr. 61</p>
               <p className="footer-text">50677 Köln</p>
               <p className="footer-text">Tel: 0221-25919697</p>
-              <p className="footer-text">manuelmechler@gmail.com</p>
+              <p className="footer-text">manuelmechler@durchatmen.life</p>
             </div>
           </div>
         </div>
