@@ -1,6 +1,19 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+// Global text justification (Blocksatz)
+// Exclude centered sections like Termine trial-info
+p, .about-text, .service-description, .hero-text, .testimonial-text,
+.philosophy-text, .about-detail-text, li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+// Keep specific sections centered (override justify)
+.trial-info p, .termine-header h1 {
+  text-align: center !important;
+}
+
 // Header styles are now in src/components/Header.scss
 
 // Hero Section

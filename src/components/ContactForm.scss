@@ -29,15 +29,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    
-    @media (max-width: $breakpoint-sm) {
+
+    @media (max-width: $breakpoint-md) {
       grid-template-columns: 1fr;
+      gap: 24px;
     }
   }
   
   .form-input,
   .form-textarea {
     width: 100%;
+    max-width: 100%;
     padding: 13px 16px;
     background-color: $white;
     border: 1px solid rgba($primary, 0.2);
@@ -46,6 +48,7 @@
     font-family: inherit;
     color: $text-dark;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 
     &::placeholder {
       color: rgba($text-dark, 0.4);
