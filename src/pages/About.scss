@@ -152,6 +152,17 @@
     }
   }
 
+  .qualification-intro {
+    font-size: $font-size-base;
+    color: $text-dark;
+    margin-bottom: $spacing-sm;
+    font-weight: 400;
+
+    @media (max-width: $breakpoint-md) {
+      color: $white;
+    }
+  }
+
   .qualification-list {
     list-style: none;
     padding: 0;
