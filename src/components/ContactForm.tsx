@@ -25,33 +25,33 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const form = e.currentTarget
+      const formData = new FormData(form)
+      formData.append("access_key", "d2a5183b-075f-4b55-8338-0fdb5b3f61e6")
 
-      console.log('Form submitted:', {
-        ...formData,
-        timestamp: new Date().toISOString(),
-        to: 'manuelmechler@gmail.com'
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       })
 
-      const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]')
-      submissions.push({
-        ...formData,
-        timestamp: new Date().toISOString()
-      })
-      localStorage.setItem('contactSubmissions', JSON.stringify(submissions))
+      const data = await response.json()
 
-      setSubmitStatus('success')
-      setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' })
-
-      setTimeout(() => setSubmitStatus('idle'), 5000)
+      if (data.success) {
+        setSubmitStatus('success')
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' })
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        throw new Error(data.message || 'Form submission failed')
+      }
     } catch (error) {
       console.error('Error submitting form:', error)
       setSubmitStatus('error')
+      setTimeout(() => setSubmitStatus('idle'), 5000)
     } finally {
       setIsSubmitting(false)
     }
@@ -60,6 +60,12 @@ const ContactForm = () => {
   return (
     <div className="contact-form-wrapper">
       <form onSubmit={handleSubmit} className="contact-form">
+        {/* Hidden field to combine first and last name for Web3Forms */}
+        <input
+          type="hidden"
+          name="name"
+          value={`${formData.firstName} ${formData.lastName}`}
+        />
         <div className="form-row">
           <label className="form-label">
             Name <span className="required">(erforderlich)</span>
