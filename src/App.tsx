@@ -5,6 +5,8 @@ import Atemtherapie from './pages/Atemtherapie'
 import About from './pages/About'
 import Termine from './pages/Termine'
 import Kontakt from './pages/Kontakt'
+import Impressum from './pages/Impressum'
+import Datenschutz from './pages/Datenschutz'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: 'kontakt',
         element: <Kontakt />,
+      },
+      {
+        path: 'impressum',
+        element: <Impressum />,
+      },
+      {
+        path: 'datenschutz',
+        element: <Datenschutz />,
       },
     ],
   },
