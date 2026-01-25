@@ -59,10 +59,9 @@ const Home = () => {
             <AnimatedSection animation="fade-in">
               <div className="quote-text-wrapper">
                 <h3 className="quote-text font-urbanist">
-                  "Deine Wahrheit ist dort, wo der Körper sich entspannt
-                  und der Atem frei fließt."
+                  "Was wir tun, ist wichtig - aber warum wir es tun ist alles"
                 </h3>
-                <p className="quote-author">Judith Hennemann</p>
+                <p className="quote-author">Simon Sinek</p>
               </div>
             </AnimatedSection>
           </div>
