@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logoSvg from '../assets/logo/LogoMechlerAtmen.svg'
 import './Footer.scss'
 
 const Footer = () => {
@@ -6,7 +7,18 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-grid">
-          {/* Left Column - Info & Badge */}
+          {/* Left Column - Logo */}
+          <div className="footer-column footer-logo-column">
+            <Link to="/" className="footer-logo-link">
+              <img
+                src={logoSvg}
+                alt="DurchAtmen"
+                className="footer-logo"
+              />
+            </Link>
+          </div>
+
+          {/* Middle Column - Info & Badge */}
           <div className="footer-column footer-middle-column">
             <div className="footer-info">
               <p className="footer-text"><strong>Manuel Mechler</strong></p>

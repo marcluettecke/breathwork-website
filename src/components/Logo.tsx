@@ -1,16 +1,14 @@
-// Logo temporarily removed from header
-// import logo from '../assets/images/durchAtmen_logo_transparent.png'
+import logoSvg from '../assets/logo/LogoMechlerAtmen.svg'
 
 const Logo = () => {
-  return null
-  // Uncomment below to restore logo:
-  // return (
-  //   <img
-  //     src={logo}
-  //     alt="DurchAtmen - Integrative Atemtherapie"
-  //     className="header-logo"
-  //   />
-  // )
+  return (
+    <div className="header-logo">
+      <img
+        src={logoSvg}
+        alt="DurchAtmen - Integrative Atemtherapie"
+      />
+    </div>
+  )
 }
 
 export default Logo

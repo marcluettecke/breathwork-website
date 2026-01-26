@@ -32,13 +32,66 @@
   }
 
   &-logo {
-    height: $header-logo-height;
+    height: 80px; // Slightly smaller on desktop
     width: auto;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    transition: opacity 0.3s ease, height 0.3s ease, margin-left 0.3s ease;
 
-    // Mobile logo size
-    @media (max-width: $breakpoint-lg - 1) {
-      height: $header-logo-height-mobile;
+    img {
+      height: 100%;
+      width: auto;
+      // Desktop: Green logo by default (no filter)
+      filter: none;
+      transition: height 0.3s ease, filter 0.3s ease;
     }
+
+    // Mobile: hide logo when header is transparent and make it smaller
+    @media (max-width: $breakpoint-lg - 1) {
+      height: 60px; // Smaller on mobile to fit in 90px header
+      margin-left: 8px;
+      opacity: 0;
+      visibility: hidden; // Also hide from layout to prevent flash
+      pointer-events: none;
+      max-height: 70px; // Ensure it never exceeds header bounds
+
+      img {
+        // Mobile: White logo when visible
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  // When scrolled, ensure logo fits within mobile header
+  &.scrolled .header-logo {
+    @media (max-width: $breakpoint-lg - 1) {
+      height: 60px;
+      max-height: 70px;
+    }
+
+    // Desktop: Make logo white when scrolled
+    @media (min-width: $breakpoint-lg) {
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  // Show logo on mobile when scrolled and make it clickable
+  &.scrolled {
+    .header-logo {
+      @media (max-width: $breakpoint-lg - 1) {
+        opacity: 1;
+        visibility: visible; // Make visible when scrolled
+        pointer-events: auto;
+      }
+    }
+  }
+
+  // Ensure logo link is always clickable on desktop
+  a {
+    cursor: pointer;
   }
 
   &-nav {
@@ -53,8 +106,8 @@
     &-item {
       font-size: $font-size-base;
       font-weight: 400;
-      color: $white;
-      transition: opacity 0.2s ease;
+      color: $primary; // Green by default on desktop
+      transition: opacity 0.2s ease, color 0.3s ease;
       text-transform: capitalize;
       text-decoration: none;
       position: relative;
@@ -72,7 +125,8 @@
           left: 0;
           right: 0;
           height: 2px;
-          background-color: $white;
+          background-color: $primary; // Green underline by default
+          transition: background-color 0.3s ease;
         }
       }
     }
@@ -89,7 +143,13 @@
     }
 
     .header-nav-item {
-      color: $white;
+      color: $white; // White when scrolled
+
+      &.active {
+        &::after {
+          background-color: $white; // White underline when scrolled
+        }
+      }
     }
 
     .kontakt-button {
@@ -113,11 +173,12 @@
 }
 
 .kontakt-button {
-  @include button($white, $black);
+  @include button($primary, $white); // Green button with white text by default
   margin-left: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: rgba($white, 0.9);
+    background-color: rgba($primary, 0.9);
   }
 }
 
