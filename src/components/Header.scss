@@ -42,9 +42,9 @@
     img {
       height: 100%;
       width: auto;
-      // Desktop: Green logo by default (no filter)
-      filter: none;
-      transition: height 0.3s ease, filter 0.3s ease;
+      // Always white logo
+      filter: brightness(0) invert(1);
+      transition: height 0.3s ease;
     }
 
     // Mobile: hide logo when header is transparent and make it smaller
@@ -55,11 +55,6 @@
       visibility: hidden; // Also hide from layout to prevent flash
       pointer-events: none;
       max-height: 70px; // Ensure it never exceeds header bounds
-
-      img {
-        // Mobile: White logo when visible
-        filter: brightness(0) invert(1);
-      }
     }
   }
 
@@ -68,13 +63,6 @@
     @media (max-width: $breakpoint-lg - 1) {
       height: 60px;
       max-height: 70px;
-    }
-
-    // Desktop: Make logo white when scrolled
-    @media (min-width: $breakpoint-lg) {
-      img {
-        filter: brightness(0) invert(1);
-      }
     }
   }
 
@@ -106,8 +94,8 @@
     &-item {
       font-size: $font-size-base;
       font-weight: 400;
-      color: $primary; // Green by default on desktop
-      transition: opacity 0.2s ease, color 0.3s ease;
+      color: $white; // Always white
+      transition: opacity 0.2s ease;
       text-transform: capitalize;
       text-decoration: none;
       position: relative;
@@ -125,8 +113,7 @@
           left: 0;
           right: 0;
           height: 2px;
-          background-color: $primary; // Green underline by default
-          transition: background-color 0.3s ease;
+          background-color: $white; // Always white underline
         }
       }
     }
@@ -143,13 +130,7 @@
     }
 
     .header-nav-item {
-      color: $white; // White when scrolled
-
-      &.active {
-        &::after {
-          background-color: $white; // White underline when scrolled
-        }
-      }
+      color: $white;
     }
 
     .kontakt-button {
@@ -173,12 +154,11 @@
 }
 
 .kontakt-button {
-  @include button($primary, $white); // Green button with white text by default
+  @include button($white, $black); // Always white button with black text
   margin-left: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: rgba($primary, 0.9);
+    background-color: rgba($white, 0.9);
   }
 }
 
