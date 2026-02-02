@@ -9,7 +9,12 @@
     display: flex;
     align-items: center;
     background-attachment: fixed;
-    
+
+    // Disable fixed background on mobile to prevent blurry images
+    @media (max-width: $breakpoint-md) {
+      background-attachment: scroll;
+    }
+
     // Dark overlay
     .absolute.inset-0 {
       @include overlay($black, 0.2);
