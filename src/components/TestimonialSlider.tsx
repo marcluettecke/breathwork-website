@@ -3,6 +3,7 @@ import { Testimonial } from '../models'
 import './TestimonialSlider.scss'
 import manuelaHeadshot from '../assets/images/manuela_headshot.jpeg'
 import judithHeadshot from '../assets/images/judith_headshot.png'
+import genericPerson from '../assets/images/generic_person.png'
 
 const testimonials: Testimonial[] = [
   {
@@ -21,24 +22,10 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    text: "Manuel vermittelt in seinen Atemsitzungen viel Sicherheit und Klarheit. Er begleitet sanft und absolut wertfrei alle aufkommenden Gefühle und Zustände. Ich habe mich bei ihm jederzeit gut aufgehoben gefühlt.",
-    author: "Manuela",
-    role: "Atemtherapeutin und Klientin",
-    image: manuelaHeadshot
-  },
-  {
-    id: 4,
-    text: "Präsent, klar und herzlich - Manuel gibt bewegende Atemsitzungen, die zu mehr innerer Ruhe und Klarheit führen.",
-    author: "Judith",
-    role: "Atemtherapeutenausbilderin",
-    image: judithHeadshot
-  },
-  {
-    id: 5,
-    text: "Manuel vermittelt in seinen Atemsitzungen viel Sicherheit und Klarheit. Er begleitet sanft und absolut wertfrei alle aufkommenden Gefühle und Zustände. Ich habe mich bei ihm jederzeit gut aufgehoben gefühlt.",
-    author: "Manuela",
-    role: "Atemtherapeutin und Klientin",
-    image: manuelaHeadshot
+    text: "Manu begleitet diesen Prozess mit großer Präsenz, Einfühlsamkeit und Klarheit. [...] Er schafft einen sicheren, wertschätzenden Raum, in dem alles willkommen ist, was sich zeigt – ohne Bewertung, dafür mit unterstützender und achtsamer Begleitung.",
+    author: "Tobias",
+    role: "Klient",
+    image: genericPerson
   }
 ]
 
