@@ -14,11 +14,7 @@ export const faqData: FAQData[] = [
   },
   {
     question: 'Was kostet eine Atemsitzung?',
-    answer: `In einem kostenlosen telefonischen Erstgespräch finden wir gemeinsam heraus, ob integrative Atemtherapie für dich geeignet ist. Ist das der Fall, machen wir einen persönlichen Termin aus.
-
-60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 100,00 €.
-
-Terminabsagen sind bis zu 48h vor dem jeweiligen Termin kostenfrei möglich. Bei späteren Absagen stelle ich ein Ausfallhonorar von 50,00€ in Rechnung.`
+    answer: `60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 100,00 €.`
   },
   {
     question: 'Weitere Informationen',

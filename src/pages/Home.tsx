@@ -30,7 +30,7 @@ const Home = () => {
                 />
                 <h3 className="service-title font-urbanist">Integrative Atemtherapie</h3>
                 <p className="service-description">
-                  Mithilfe des Atems findest du auf sanfte Weise die Verbindung zu deinen tiefliegenden Gefühlen und kannst sie liebevoll integrieren. In der Atemtherapiesitzung schaffe ich dabei einen sicheren Raum und begleite dich unterstützend und einfühlsam in deinem individuellen Prozess.
+                  Die Integrative Atemtherapie ist ein humanistisches, körperorientiertes Verfahren, das durch bewusstes, verbundenes Atmen emotionale Blockaden, Traumata und Stress löst. Sie verbindet Atemtechniken mit Gesprächstherapie, um Körper, Psyche und Geist zu harmonisieren. Ziel ist es, tiefsitzende Muster aufzulösen, das Nervensystem zu regulieren und das körperliche sowie seelische Wohlbefinden zu steigern.
                 </p>
                 <Link to="/atemtherapie" className="service-button">
                   mehr Informationen
