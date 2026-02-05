@@ -1,23 +1,34 @@
 export interface FAQData {
-  question: string
-  answer: string
+  question: string;
+  answer: string;
 }
 
 export const faqData: FAQData[] = [
   {
-    question: 'Wann finden die Termine statt?',
-    answer: 'Termine finden individuell nach Vereinbarung statt.'
+    question: "Wann und Wo finden Termine statt?",
+    answer:
+      "Atemsitzungen finden nach individueller Vereinbarung in meiner Praxis in der Rolandstraße 61, 50677 Köln‑Südstadt statt.\n\nWenn du Interesse an einer Atemmeditation hast, schreib mir gerne. Ich teile dir dann die nächsten Gruppentermine mit und nehme dich auf Wunsch in den Verteiler auf.\n\nDu hast bereits Freund*innen oder Bekannte, mit denen du gerne eine geführte Atemmeditation erleben möchtest? Dann finden wir gemeinsam einen passenden Termin – ich begleite euch gerne in meinen Praxisräumen.",
   },
   {
-    question: 'Wo findet die Atemsitzung statt?',
-    answer: 'Mein Praxisraum steht in der Rolandstr. 61, 50677 Köln nach terminlicher Vereinbarung offen für dich.'
+    question: "Atemsitzung oder Atemmeditation",
+    answer:
+      "Die Atemsitzung ist deine persönliche Reise: In einem Einzelsetting begleite ich dich achtsam und individuell – du bestimmst das Tempo, ich halte den Raum.\n\nDie Atemmeditation ist ein gemeinsames Erleben in der Gruppe. Du wirst von mir mit Worten durch den Atemprozess geführt, kannst loslassen und bei dir ankommen – in der stillen Präsenz der Anderen.",
   },
   {
-    question: 'Was kostet eine Atemsitzung?',
-    answer: `60 Minuten werden mit 80,00 € berechnet, bis zu 90 Minuten mit 100,00 €.`
+    question: "Honorar & Dauer",
+    answer: `Atemsitzung (Einzelbegleitung) - Eine auf dich abgestimmte Atemsitzung dauert je nach Verlauf 60 bis 90 Minuten.
+60 Minuten: 80 €
+ca. 90 Minuten inkl. Integrationsphase: 100 €
+
+Erfahrungsgemäß nimmt sich der Atem seinen Raum – 90 Minuten haben sich in der Praxis bewährt.
+
+Atemmeditation (Gruppe) - Die Gruppenmeditationen dauern inklusive Ankommen, geführter Praxis und Integration ca. 90 Minuten.
+Bei bis zu 4 Teilnehmenden: 20 € pro Person
+Ab 5 Personen: 15 € pro Person`,
   },
   {
-    question: 'Weitere Informationen',
-    answer: 'Weitere häufig gestellte Fragen und ausführliche Informationen folgen in Kürze. Bei Fragen kontaktiere mich gerne.'
+    question: "Weitere Informationen und aktuelle Termine",
+    answer:
+      "Weitere häufig gestellte Fragen und ausführliche Informationen folgen in Kürze. Bei Fragen kontaktiere mich gerne.\n\ndie nächsten Termine für Atemmeditationen sind:\n\n1.\n\n2.\n\n3.",
   },
-]
+];

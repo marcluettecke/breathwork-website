@@ -17,15 +17,15 @@ const Atemtherapie = () => {
         <div className='hero-content'>
           <h1>Was macht eine Atemsitzung aus?</h1>
           <div className='hero-description'>
-            <h2>DurchAtmen – Integrative Atemtherapie mit Tiefe</h2>
+            <h2>DurchAtmen kann…</h2>
             <p>
-              In meiner Arbeit mit DurchAtmen verbinde ich den verbundenen Atem
-              mit einem ganzheitlichen Blick auf den Menschen. Verbunden Atmen
-              bedeutet, dass die Atempausen nach der Ein- und Ausatmung
-              ausbleiben und du somit verbunden atmest. Diese Atemtechnik ist
-              grundlegend für die Integrative Atemtherapie und bietet einen
-              tiefen Zugang zu körperlichen, seelischen und geistigen Prozessen
-              – durch das bewusste Erleben des eigenen Atems.
+              DurchAtmen – ein Weg zu mehr Entspannung, innerer Klarheit und Verbindung mit dir selbst und den Menschen in deinem Leben.
+            </p>
+            <p>
+              Die Grundlage meiner Arbeit ist die Integrative Atemtherapie – ein körperorientierter Ansatz, der dich mit deinem natürlichen Atemrhythmus und deinem inneren Erleben in Kontakt bringt.
+            </p>
+            <p>
+              Als dein Begleiter schaffe ich einen wertfreien Raum, in dem du dich so zeigen darfst, wie du dich gerade fühlst. Deine Präsenz steht im Mittelpunkt – getragen von meiner Präsenz.
             </p>
           </div>
         </div>

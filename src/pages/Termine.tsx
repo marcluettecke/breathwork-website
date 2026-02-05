@@ -155,7 +155,7 @@ const Termine = () => {
       {/* FAQ Section with blue background */}
       <section className='termine-faq'>
         <div className='faq-container'>
-          <h2>Integrative Atemtherapie</h2>
+          <h2>Integrative Atemtherapie und geführte Atemmeditationen</h2>
           <div className='faq-list'>
             {faqData.map((faq, index) => (
               <FAQItem key={index} {...faq} />
