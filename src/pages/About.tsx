@@ -50,7 +50,7 @@ const About = () => {
             <AnimatedSection animation="fade-up" delay={100}>
               <div className="qualification-column">
                 <ul className="qualification-list">
-                  <li>Integrativer Atemtherapie</li>
+                  <li>Integrative Atemtherapie</li>
                   <li>Embodiment und Körpertherapie</li>
                   <li>Innere Kindarbeit</li>
                   <li>Voice Dialog</li>
