@@ -1,5 +1,5 @@
-import mountainLandscape from "../assets/images/mountain_landscape.jpg";
 import officeImage from "../assets/images/Manuel_solo.jpeg";
+import mountainLandscape from "../assets/images/mountain_landscape.jpg";
 import FAQItem from "../components/FAQItem";
 import { faqData } from "../data/faqData";
 import "../styles/atemtherapie.scss";
@@ -19,13 +19,18 @@ const Atemtherapie = () => {
           <div className='hero-description'>
             <h2>DurchAtmen kann…</h2>
             <p>
-              DurchAtmen – ein Weg zu mehr Entspannung, innerer Klarheit und Verbindung mit dir selbst und den Menschen in deinem Leben.
+              Ein Weg zu mehr Entspannung, innerer Klarheit und Verbindung mit
+              dir selbst und den Menschen in deinem Leben sein.
             </p>
             <p>
-              Die Grundlage meiner Arbeit ist die Integrative Atemtherapie – ein körperorientierter Ansatz, der dich mit deinem natürlichen Atemrhythmus und deinem inneren Erleben in Kontakt bringt.
+              Die Grundlage meiner Arbeit ist die Integrative Atemtherapie – ein
+              körperorientierter Ansatz, der dich mit deinem natürlichen
+              Atemrhythmus und deinem inneren Erleben in Kontakt bringt.
             </p>
             <p>
-              Als dein Begleiter schaffe ich einen wertfreien Raum, in dem du dich so zeigen darfst, wie du dich gerade fühlst. Deine Präsenz steht im Mittelpunkt – getragen von meiner Präsenz.
+              Als dein Begleiter schaffe ich einen wertfreien Raum, in dem du
+              dich so zeigen darfst, wie du dich gerade fühlst. Deine Präsenz
+              steht im Mittelpunkt – getragen von meiner Präsenz.
             </p>
           </div>
         </div>
